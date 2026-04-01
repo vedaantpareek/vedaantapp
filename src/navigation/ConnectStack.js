@@ -45,6 +45,8 @@ export default function ConnectStack() {
         headerTitleAlign: 'center',
         headerShadowVisible: false,
         headerBackTitleVisible: false,
+        headerRightContainerStyle: { paddingRight: 4, backgroundColor: 'transparent' },
+        headerLeftContainerStyle: { paddingLeft: 4, backgroundColor: 'transparent' },
       }}
     >
       {/* ── Chat list — search button ────────────────────────────── */}

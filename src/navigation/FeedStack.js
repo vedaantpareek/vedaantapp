@@ -15,7 +15,11 @@ export default function FeedStack() {
         headerStyle: { backgroundColor: COLORS.primary },
         headerTintColor: COLORS.white,
         headerTitleStyle: { fontWeight: '700' },
+        headerTitleAlign: 'center',
         headerShadowVisible: false,
+        headerBackTitleVisible: false,
+        headerRightContainerStyle: { paddingRight: 4, backgroundColor: 'transparent' },
+        headerLeftContainerStyle: { paddingLeft: 4, backgroundColor: 'transparent' },
       }}
     >
       <Stack.Screen
