@@ -126,7 +126,7 @@ export default function GroupChannelScreen({ route, navigation }) {
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
           style={{ paddingLeft: 16 }}
         >
-          <Ionicons name="chevron-back" size={26} color={COLORS.white} />
+          <Ionicons name="arrow-back" size={24} color={COLORS.white} />
         </TouchableOpacity>
       ),
       headerRight: () => (

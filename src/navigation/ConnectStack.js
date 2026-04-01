@@ -7,15 +7,25 @@ import { SCREENS } from '../utils/constants';
 
 const Stack = createNativeStackNavigator();
 
-function CircleBtn({ onPress, iconName, iconSize = 22 }) {
+function CircleBtn({ onPress, iconName, iconSize = 18 }) {
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.6}
       hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-      style={{ paddingRight: 16 }}
+      style={{ marginRight: 12 }}
     >
-      <Ionicons name={iconName} size={iconSize} color={COLORS.white} />
+      <View style={{
+        width: 32,
+        height: 32,
+        borderRadius: 16,
+        backgroundColor: 'rgba(255,255,255,0.92)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden',
+      }}>
+        <Ionicons name={iconName} size={iconSize} color={COLORS.primary} />
+      </View>
     </TouchableOpacity>
   );
 }
@@ -46,7 +56,7 @@ export default function ConnectStack() {
           headerRight: () => (
             <CircleBtn
               onPress={() => navigation.navigate(SCREENS.NEW_MESSAGE)}
-              iconName="search-outline"
+              iconName="search"
             />
           ),
         })}
