@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useChatStore } from '../../stores/chatStore';
 import COLORS from '../../theme/colors';
 import SPACING from '../../theme/spacing';
-import { CATEGORY_COLORS, APP_DATE, SCREENS } from '../../utils/constants';
+import { CATEGORY_COLORS, CATEGORY_EMOJI, APP_DATE, SCREENS } from '../../utils/constants';
 import USERS from '../../data/users.json';
 import POST_COMMENTS from '../../data/postComments';
 
@@ -302,7 +302,9 @@ export default function AnnouncementDetailScreen({ route, navigation }) {
         {/* Category badge */}
         <View style={styles.badgeRow}>
           <View style={[styles.badge, { backgroundColor: badgeColor }]}>
-            <Text style={styles.badgeText}>{post.category}</Text>
+            <Text style={styles.badgeText}>
+              {CATEGORY_EMOJI[post.category] ? `${CATEGORY_EMOJI[post.category]} ` : ''}{post.category}
+            </Text>
           </View>
           {post.isPinned && (
             <View style={styles.pinnedChip}>

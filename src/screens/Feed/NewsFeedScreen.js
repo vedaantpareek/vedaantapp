@@ -16,7 +16,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 import COLORS from '../../theme/colors';
 import SPACING from '../../theme/spacing';
-import { SCREENS, CATEGORY_COLORS, APP_DATE, COMPETITOR_NAME } from '../../utils/constants';
+import { SCREENS, CATEGORY_COLORS, CATEGORY_EMOJI, APP_DATE, COMPETITOR_NAME } from '../../utils/constants';
 import POSTS from '../../data/posts.json';
 import USERS from '../../data/users.json';
 import { useTapRegistration } from '../../hooks/useTapRegistration';
@@ -121,7 +121,9 @@ function PostCard({ post, liked, commentCount, onPress, onLike }) {
     >
       <View style={styles.cardTopRow}>
         <View style={[styles.badge, { backgroundColor: badgeColor }]}>
-          <Text style={styles.badgeText}>{post.category.toUpperCase()}</Text>
+          <Text style={styles.badgeText}>
+            {CATEGORY_EMOJI[post.category] ? `${CATEGORY_EMOJI[post.category]} ` : ''}{post.category.toUpperCase()}
+          </Text>
         </View>
         {post.isPinned && (
           <View style={styles.pinnedChip}>

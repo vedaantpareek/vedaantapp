@@ -124,9 +124,11 @@ export default function GroupChannelScreen({ route, navigation }) {
           }}
           activeOpacity={0.6}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          style={{ paddingLeft: 16 }}
+          style={{ marginLeft: 12 }}
         >
-          <Ionicons name="arrow-back" size={24} color={COLORS.white} />
+          <View style={styles.headerCircleBtn}>
+            <Ionicons name="arrow-back" size={18} color={COLORS.primary} />
+          </View>
         </TouchableOpacity>
       ),
       headerRight: () => (
@@ -134,9 +136,11 @@ export default function GroupChannelScreen({ route, navigation }) {
           onPress={() => setAddMembersVisible(true)}
           activeOpacity={0.6}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          style={{ paddingRight: 16 }}
+          style={{ marginRight: 12 }}
         >
-          <Ionicons name="person-add-outline" size={22} color={COLORS.white} />
+          <View style={styles.headerCircleBtn}>
+            <Ionicons name="person-add" size={18} color={COLORS.primary} />
+          </View>
         </TouchableOpacity>
       ),
     });
@@ -430,6 +434,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.92)',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
   },
   headerRight: {
     flexDirection: 'row',

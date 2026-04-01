@@ -58,7 +58,7 @@ export const VALIDATION = {
 export const CATEGORY_COLORS = {
   Conference: '#C9A84C',
   'Chapter News': '#38A169',
-  'National News': '#1B3A6B',
+  'National News': '#1d81dc',
   'Event Tips': '#DD6B20',
   NLC: '#3182CE',
   Resources: '#805AD5',
@@ -68,6 +68,22 @@ export const CATEGORY_COLORS = {
   Colorado: '#2C5282',
   Spotlight: '#D53F8C',
   Reminder: '#E53E3E',
+};
+
+// Emoji prefix for each news feed category badge
+export const CATEGORY_EMOJI = {
+  Conference: '🏆',
+  'Chapter News': '📰',
+  'National News': '🇺🇸',
+  'Event Tips': '💡',
+  NLC: '🚀',
+  Resources: '📚',
+  'FBLA Week': '🎉',
+  'Professional Dev': '💼',
+  Leadership: '⭐',
+  Colorado: '🏔️',
+  Spotlight: '🌟',
+  Reminder: '⏰',
 };
 
 // Event type colors for calendar
