@@ -569,11 +569,10 @@ const styles = StyleSheet.create({
   notesBody: { fontSize: 14, color: COLORS.bodyText, lineHeight: 22 },
 
   headerButton: {
-    minWidth: SPACING.touchTarget,
-    minHeight: SPACING.touchTarget,
+    paddingRight: 16,
+    paddingVertical: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: Platform.OS === 'ios' ? -SPACING.xs : 0,
   },
 
   commentsSection: { marginBottom: SPACING.md },

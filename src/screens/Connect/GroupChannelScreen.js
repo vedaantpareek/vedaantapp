@@ -110,9 +110,25 @@ export default function GroupChannelScreen({ route, navigation }) {
     markChannelRead(channelId);
   }, [channelId, markChannelRead]);
 
-  // Set header right button to open add-members modal
+  // Set header buttons — custom back (handles cross-tab navigation) + add-members
   useLayoutEffect(() => {
     navigation.setOptions({
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => {
+            if (navigation.canGoBack()) {
+              navigation.goBack();
+            } else {
+              navigation.navigate(SCREENS.CHAT_LIST);
+            }
+          }}
+          activeOpacity={0.6}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          style={{ paddingLeft: 16 }}
+        >
+          <Ionicons name="chevron-back" size={26} color={COLORS.white} />
+        </TouchableOpacity>
+      ),
       headerRight: () => (
         <TouchableOpacity
           onPress={() => setAddMembersVisible(true)}

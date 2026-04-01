@@ -15,7 +15,7 @@
     "name": "Mobile App Dev",
     "description": "Connect with Mobile Application Development competitors — tips, resources, and demo prep",
     "icon": "phone-portrait",
-    "color": "#1B3A6B",
+    "color": "#1d81dc",
     "memberIds": ["user_1","user_5","user_10","user_15","user_6"],
     "lastMessage": {"text": "Anyone else nervous for their presentation? 😅", "authorId": "user_10", "timestamp": "Apr 3, 8:12 AM"},
     "unreadCount": 3,
