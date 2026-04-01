@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "ConnectFBLA",
+    "slug": "connectfbla",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1B3A6B"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cherrycreek.connectfbla"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1B3A6B"
+      },
+      "package": "com.cherrycreek.connectfbla"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "ConnectFBLA needs access to your photos to share images in conversations."
+        }
+      ],
+      "expo-asset"
+    ]
+  }
+}

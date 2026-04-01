@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConnectFBLA — Remote Control</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B3A6B;
+      --navy-light: #2a5299;
+      --gold: #F5A623;
+      --bg: #0d1117;
+      --panel-bg: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --green: #3fb950;
+      --red: #f85149;
+
+      /* iPhone 14 logical resolution */
+      --phone-w: 390px;
+      --phone-h: 844px;
+      --phone-radius: 55px;
+      --screen-radius: 47px;
+      --notch-w: 126px;
+      --notch-h: 37px;
+      --bezel: 10px;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── Layout ─────────────────────────────────────────── */
+    .layout {
+      display: flex;
+      height: 100vh;
+      gap: 0;
+    }
+
+    /* ── Left sidebar ───────────────────────────────────── */
+    .sidebar {
+      width: 280px;
+      min-width: 280px;
+      background: var(--panel-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 24px 20px;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    /* Hide sidebar in presentation mode */
+    body.presentation .sidebar { display: none; }
+    body.presentation .phone-wrapper { margin: auto; }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .logo-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* Status card */
+    .status-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+    }
+    .status-row:not(:last-child) { border-bottom: 1px solid var(--border); }
+    .status-label { font-size: 13px; color: var(--text-muted); }
+    .status-dot {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      transition: background 0.3s;
+    }
+    .dot.connected { background: var(--green); }
+    .dot.pulse {
+      animation: pulse 1.5s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    /* Nav buttons */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .nav-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s, border-color 0.15s;
+      color: var(--text);
+    }
+    .nav-btn:hover {
+      background: var(--navy);
+      border-color: var(--navy-light);
+    }
+    .nav-btn .btn-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+    .nav-btn .btn-label { font-size: 11px; font-weight: 600; }
+
+    /* Keyboard input */
+    .keyboard-section { display: flex; flex-direction: column; gap: 8px; }
+    .keyboard-input-wrap {
+      position: relative;
+    }
+    .keyboard-input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 40px 10px 12px;
+      font-size: 13px;
+      color: var(--text);
+      font-family: inherit;
+      resize: none;
+      outline: none;
+      line-height: 1.4;
+      min-height: 40px;
+      max-height: 80px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    .keyboard-input:focus { border-color: var(--navy-light); }
+    .keyboard-input::placeholder { color: var(--text-muted); }
+    .keyboard-clear-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px;
+      line-height: 1;
+    }
+    .keyboard-clear-btn:hover { color: var(--text); }
+    .keyboard-hint {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .keyboard-hint strong { color: var(--text); }
+
+    /* Instructions */
+    .instructions {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .instructions strong { color: var(--text); }
+
+    .spacer { flex: 1; }
+
+    .footer-btn {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .footer-btn:hover { border-color: var(--text-muted); color: var(--text); }
+
+    /* ── Right phone area ───────────────────────────────── */
+    .phone-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+    }
+
+    /* Scale-down wrapper so phone fits the screen */
+    .phone-scaler {
+      transform-origin: center center;
+    }
+
+    /* iPhone shell */
+    .phone-frame {
+      width: var(--phone-w);
+      height: var(--phone-h);
+      background: #1c1c1e;
+      border-radius: var(--phone-radius);
+      position: relative;
+      padding: var(--bezel);
+
+      /* Multi-layer shadow for depth */
+      box-shadow:
+        inset 0 0 0 1px #3a3a3c,
+        inset 0 0 0 2px #2c2c2e,
+        0 0 0 1px #0a0a0a,
+        0 4px 6px rgba(0,0,0,0.5),
+        0 16px 48px rgba(0,0,0,0.7),
+        0 40px 100px rgba(0,0,0,0.4);
+    }
+
+    /* Side buttons */
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      right: -3px;
+      top: 140px;
+      width: 3px;
+      height: 70px;
+      background: #2c2c2e;
+      border-radius: 0 2px 2px 0;
+      box-shadow: 0 90px 0 #2c2c2e;
+    }
+    .phone-frame::after {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 110px;
+      width: 3px;
+      height: 36px;
+      background: #2c2c2e;
+      border-radius: 2px 0 0 2px;
+      box-shadow: 0 52px 0 #2c2c2e, 0 104px 0 #2c2c2e;
+    }
+
+    /* Dynamic island */
+    .phone-notch {
+      position: absolute;
+      top: var(--bezel);
+      left: 50%;
+      transform: translateX(-50%);
+      width: var(--notch-w);
+      height: var(--notch-h);
+      background: #1c1c1e;
+      border-radius: 0 0 20px 20px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .phone-notch::after {
+      content: '';
+      width: 72px;
+      height: 22px;
+      background: #000;
+      border-radius: 11px;
+    }
+
+    /* Screen */
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border-radius: var(--screen-radius);
+      overflow: hidden;
+      position: relative;
+      cursor: crosshair;
+    }
+
+    /* Live screenshot */
+    #screenshot {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Placeholder when no screenshot */
+    .screen-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #3a3a3c;
+      text-align: center;
+      padding: 20px;
+    }
+    .screen-placeholder .placeholder-icon { font-size: 48px; }
+    .screen-placeholder .placeholder-title { font-size: 16px; font-weight: 600; }
+    .screen-placeholder .placeholder-sub { font-size: 13px; line-height: 1.5; }
+    #screenshot.hidden { display: none; }
+
+    /* Touch overlay — captures all mouse interaction */
+    #touch-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      cursor: crosshair;
+    }
+
+    /* Ripple effect on tap */
+    .ripple {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(245, 166, 35, 0.5);
+      transform: translate(-50%, -50%) scale(0);
+      pointer-events: none;
+      z-index: 20;
+      animation: ripple-anim 0.4s ease-out forwards;
+    }
+    @keyframes ripple-anim {
+      to { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+    }
+
+    /* Home bar */
+    .phone-home-bar {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 134px;
+      height: 5px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 3px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* ── Toast notifications ─────────────────────────────── */
+    #toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1000;
+    }
+    .toast {
+      background: #21262d;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      color: var(--text);
+      animation: slide-in 0.2s ease;
+      max-width: 260px;
+    }
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ───────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <div class="logo-icon">🔗</div>
+      <div>
+        <div class="logo-text">ConnectFBLA</div>
+        <div class="logo-sub">Remote Control</div>
+      </div>
+    </div>
+
+    <!-- Connection status -->
+    <div>
+      <div class="section-label">Connection</div>
+      <div class="status-card">
+        <div class="status-row">
+          <span class="status-label">Phone</span>
+          <span class="status-dot" id="phone-status">
+            <span class="dot" id="phone-dot"></span>
+            <span id="phone-text">Waiting…</span>
+          </span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Server</span>
+          <span class="status-dot" id="server-status">
+            <span class="dot" id="server-dot"></span>
+            <span id="server-text">Connecting…</span>
+          </span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">FPS</span>
+          <span class="status-dot">
+            <span id="fps-text" style="color:var(--text-muted)">—</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick navigation -->
+    <div>
+      <div class="section-label">Quick Navigate</div>
+      <div class="nav-grid">
+        <button class="nav-btn" onclick="sendNavigate('HomeTab')">
+          <span class="btn-icon">🏠</span>
+          <span class="btn-label">Home</span>
+        </button>
+        <button class="nav-btn" onclick="sendNavigate('CalendarTab')">
+          <span class="btn-icon">📅</span>
+          <span class="btn-label">Calendar</span>
+        </button>
+        <button class="nav-btn" onclick="sendNavigate('ResourcesTab')">
+          <span class="btn-icon">📚</span>
+          <span class="btn-label">Resources</span>
+        </button>
+        <button class="nav-btn" onclick="sendNavigate('ConnectTab')">
+          <span class="btn-icon">💬</span>
+          <span class="btn-label">Connect</span>
+        </button>
+        <button class="nav-btn" onclick="sendNavigate('ProfileTab')">
+          <span class="btn-icon">👤</span>
+          <span class="btn-label">Profile</span>
+        </button>
+        <button class="nav-btn" onclick="sendCommand({type:'back'})">
+          <span class="btn-icon">⬅️</span>
+          <span class="btn-label">Back</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div>
+      <div class="section-label">Controls</div>
+      <div class="instructions">
+        <strong>Tap</strong> anywhere in the phone frame to tap that spot on the real phone.<br><br>
+        <strong>Swipe</strong> left/right to go back or switch tabs.<br><br>
+        <strong>Scroll</strong> mouse wheel inside the frame to scroll.<br><br>
+        Use <strong>Quick Navigate</strong> buttons above to jump to any section instantly.
+      </div>
+    </div>
+
+    <!-- Keyboard input -->
+    <div>
+      <div class="section-label">Type to Phone</div>
+      <div class="keyboard-section">
+        <div class="keyboard-input-wrap">
+          <textarea
+            id="keyboard-input"
+            class="keyboard-input"
+            placeholder="Type here → appears on phone"
+            rows="1"
+          ></textarea>
+          <button class="keyboard-clear-btn" onclick="clearKeyboard()" title="Clear">✕</button>
+        </div>
+        <div class="keyboard-hint">
+          <strong>Enter</strong> sends the message · <strong>Backspace</strong> deletes · works in any open chat
+        </div>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <button class="footer-btn" onclick="toggleFullscreen()">⛶ Fullscreen (F11)</button>
+    <button class="footer-btn" onclick="togglePresentation()">🎯 Presentation Mode</button>
+
+  </aside>
+
+  <!-- ── Phone area ────────────────────────────────────── -->
+  <div class="phone-wrapper">
+    <div class="phone-scaler" id="phone-scaler">
+      <div class="phone-frame">
+
+        <!-- Dynamic island -->
+        <div class="phone-notch"></div>
+
+        <!-- Screen -->
+        <div class="phone-screen" id="phone-screen">
+
+          <!-- Placeholder shown when no screenshot yet -->
+          <div class="screen-placeholder" id="placeholder">
+            <span class="placeholder-icon">📱</span>
+            <span class="placeholder-title">Waiting for phone</span>
+            <span class="placeholder-sub">
+              Open the ConnectFBLA app<br>on your phone to start<br>the live mirror.
+            </span>
+          </div>
+
+          <!-- Live screenshot -->
+          <img id="screenshot" class="hidden" alt="Live phone screen" draggable="false" />
+
+          <!-- Invisible touch capture layer -->
+          <div id="touch-overlay"></div>
+
+          <!-- Home indicator -->
+          <div class="phone-home-bar"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<script>
+  // ── Config ─────────────────────────────────────────────────────────────────
+  // Server address: same host as this page
+  const WS_URL = `ws://${location.hostname}:${location.port || 3001}/`;
+
+  // ── State ──────────────────────────────────────────────────────────────────
+  let ws = null;
+  let phoneConnected = false;
+  let lastScreenshotTime = 0;
+  let fpsFrames = 0;
+  let fpsTimer = null;
+
+  // Drag / swipe detection
+  let dragStart = null;
+  let isDragging = false;
+  const SWIPE_THRESHOLD = 30; // px in phone coordinates
+
+  // ── WebSocket ──────────────────────────────────────────────────────────────
+  function connect() {
+    ws = new WebSocket(WS_URL);
+
+    ws.onopen = () => {
+      setServerStatus(true);
+    };
+
+    ws.onclose = () => {
+      setServerStatus(false);
+      setPhoneStatus(false);
+      setTimeout(connect, 2000);
+    };
+
+    ws.onerror = () => {
+      // onclose will fire next
+    };
+
+    ws.onmessage = (event) => {
+      let msg;
+      try { msg = JSON.parse(event.data); } catch { return; }
+
+      if (msg.type === 'screenshot') {
+        handleScreenshot(msg.data);
+      } else if (msg.type === 'status') {
+        setPhoneStatus(msg.phoneConnected);
+      }
+    };
+  }
+
+  function sendCommand(cmd) {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify(cmd));
+    } else {
+      showToast('Not connected to server');
+    }
+  }
+
+  function sendNavigate(screen) {
+    sendCommand({ type: 'navigate', screen });
+    showToast(`Navigating to ${screen.replace('Tab', '')}`);
+  }
+
+  // ── Screenshot display ─────────────────────────────────────────────────────
+  const screenshotEl = document.getElementById('screenshot');
+  const placeholderEl = document.getElementById('placeholder');
+
+  function handleScreenshot(dataUri) {
+    screenshotEl.src = dataUri;
+    if (screenshotEl.classList.contains('hidden')) {
+      screenshotEl.classList.remove('hidden');
+      placeholderEl.style.display = 'none';
+    }
+    // FPS counter
+    fpsFrames++;
+    const now = Date.now();
+    if (now - lastScreenshotTime >= 1000) {
+      document.getElementById('fps-text').textContent = `${fpsFrames} fps`;
+      fpsFrames = 0;
+      lastScreenshotTime = now;
+    }
+  }
+
+  // ── Status UI ──────────────────────────────────────────────────────────────
+  function setServerStatus(connected) {
+    const dot = document.getElementById('server-dot');
+    const text = document.getElementById('server-text');
+    dot.className = 'dot' + (connected ? ' connected' : '');
+    text.textContent = connected ? 'Connected' : 'Disconnected';
+  }
+
+  function setPhoneStatus(connected) {
+    phoneConnected = connected;
+    const dot = document.getElementById('phone-dot');
+    const text = document.getElementById('phone-text');
+    dot.className = 'dot' + (connected ? ' connected pulse' : '');
+    text.textContent = connected ? 'Live' : 'Waiting…';
+    if (!connected) {
+      screenshotEl.classList.add('hidden');
+      placeholderEl.style.display = '';
+    }
+  }
+
+  // ── Touch / gesture handling ───────────────────────────────────────────────
+  const overlay = document.getElementById('touch-overlay');
+  const phoneScreen = document.getElementById('phone-screen');
+
+  function getPhoneCoords(clientX, clientY) {
+    const rect = overlay.getBoundingClientRect();
+    const xPct = Math.max(0, Math.min(1, (clientX - rect.left)  / rect.width));
+    const yPct = Math.max(0, Math.min(1, (clientY - rect.top)   / rect.height));
+    return { xPct, yPct };
+  }
+
+  // Mouse down → start drag tracking
+  overlay.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    dragStart = { x: e.clientX, y: e.clientY, time: Date.now() };
+    isDragging = false;
+  });
+
+  // Mouse move → detect drag
+  overlay.addEventListener('mousemove', (e) => {
+    if (!dragStart) return;
+    const dx = e.clientX - dragStart.x;
+    const dy = e.clientY - dragStart.y;
+    if (Math.sqrt(dx*dx + dy*dy) > 8) isDragging = true;
+  });
+
+  // Mouse up → tap or swipe
+  overlay.addEventListener('mouseup', (e) => {
+    if (!dragStart) return;
+
+    const coords = getPhoneCoords(e.clientX, e.clientY);
+    const dx = e.clientX - dragStart.x;
+    const dy = e.clientY - dragStart.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    const elapsed = Date.now() - dragStart.time;
+
+    if (!isDragging || dist < 10) {
+      // ── Tap ──────────────────────────────────────────────
+      sendCommand({ type: 'tap', xPct: coords.xPct, yPct: coords.yPct });
+      spawnRipple(e.clientX, e.clientY);
+    } else {
+      // ── Swipe ────────────────────────────────────────────
+      const isHorizontal = Math.abs(dx) > Math.abs(dy);
+      if (isHorizontal) {
+        const dir = dx > 0 ? 'right' : 'left';
+        sendCommand({ type: 'swipe', direction: dir });
+        showToast(`Swipe ${dir}`);
+      } else {
+        // Vertical swipe → scroll
+        sendCommand({ type: 'scroll', deltaY: -dy * 2 });
+      }
+    }
+
+    dragStart = null;
+    isDragging = false;
+  });
+
+  // Cancel on leave
+  overlay.addEventListener('mouseleave', () => {
+    dragStart = null;
+    isDragging = false;
+  });
+
+  // Scroll wheel
+  overlay.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    sendCommand({ type: 'scroll', deltaY: e.deltaY * -1 });
+  }, { passive: false });
+
+  // Prevent context menu
+  overlay.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // ── Ripple effect ──────────────────────────────────────────────────────────
+  function spawnRipple(clientX, clientY) {
+    const r = document.createElement('div');
+    r.className = 'ripple';
+    // Position relative to phone-screen container
+    const rect = phoneScreen.getBoundingClientRect();
+    r.style.left = (clientX - rect.left) + 'px';
+    r.style.top  = (clientY - rect.top)  + 'px';
+    phoneScreen.appendChild(r);
+    r.addEventListener('animationend', () => r.remove());
+  }
+
+  // ── Phone frame auto-scaling ────────────────────────────────────────────────
+  function scalePhone() {
+    const wrapper = document.querySelector('.phone-wrapper');
+    const scaler  = document.getElementById('phone-scaler');
+    const PHONE_W = 390 + 20; // frame + small padding
+    const PHONE_H = 844 + 20;
+    const wrapW = wrapper.clientWidth  - 48;
+    const wrapH = wrapper.clientHeight - 48;
+    const scale = Math.min(wrapW / PHONE_W, wrapH / PHONE_H, 1);
+    scaler.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener('resize', scalePhone);
+  scalePhone();
+
+  // ── Presentation mode ──────────────────────────────────────────────────────
+  const isPresentationMode = location.pathname === '/presentation-mode';
+  if (isPresentationMode) {
+    document.body.classList.add('presentation');
+  }
+
+  function togglePresentation() {
+    document.body.classList.toggle('presentation');
+    scalePhone();
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  // F11 shortcut (works in some browsers)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'F11') { e.preventDefault(); toggleFullscreen(); }
+    if (e.key === 'p' || e.key === 'P') togglePresentation();
+    if (e.key === 'Escape') document.body.classList.remove('presentation');
+  });
+
+  // ── Toast ──────────────────────────────────────────────────────────────────
+  function showToast(msg, duration = 2000) {
+    const container = document.getElementById('toast-container');
+    const el = document.createElement('div');
+    el.className = 'toast';
+    el.textContent = msg;
+    container.appendChild(el);
+    setTimeout(() => el.remove(), duration);
+  }
+
+  // ── Keyboard input → phone ─────────────────────────────────────────────────
+  const keyboardInput = document.getElementById('keyboard-input');
+
+  keyboardInput.addEventListener('keydown', (e) => {
+    // Always send to phone regardless of phone connection state
+    const key = e.key;
+
+    if (key === 'Enter') {
+      e.preventDefault(); // don't add newline in the textarea
+      sendCommand({ type: 'keyInput', key: 'Enter', char: '' });
+      // Clear the input after sending
+      keyboardInput.value = '';
+      showToast('Message sent');
+      return;
+    }
+
+    if (key === 'Backspace') {
+      // Let the textarea handle its own backspace visually,
+      // and also send to phone
+      sendCommand({ type: 'keyInput', key: 'Backspace', char: '' });
+      return; // don't preventDefault — let textarea update naturally
+    }
+
+    // Printable characters: length === 1 covers letters, digits, punctuation, space
+    if (key.length === 1) {
+      sendCommand({ type: 'keyInput', key, char: key });
+    }
+  });
+
+  // Auto-resize textarea as content grows
+  keyboardInput.addEventListener('input', () => {
+    keyboardInput.style.height = 'auto';
+    keyboardInput.style.height = Math.min(keyboardInput.scrollHeight, 80) + 'px';
+  });
+
+  function clearKeyboard() {
+    keyboardInput.value = '';
+    keyboardInput.style.height = 'auto';
+    // Send clear signal: empty the phone input too
+    sendCommand({ type: 'keyInput', key: 'ClearAll', char: '' });
+    keyboardInput.focus();
+  }
+
+  // ── Boot ───────────────────────────────────────────────────────────────────
+  connect();
+</script>
+</body>
+</html>

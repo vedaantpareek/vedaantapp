@@ -1,0 +1,656 @@
+{
+  "channel_1": [
+    {
+      "id": "msg_101",
+      "channelId": "channel_1",
+      "authorId": "user_5",
+      "text": "Heads up everyone — the Marriott has confirmed our room block! Book using code FBLA2026 for the discounted rate. Deadline is March 28.",
+      "timestamp": "Apr 2, 7:30 AM",
+      "reactions": [{"emoji": "👍", "count": 8}, {"emoji": "🙌", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_102",
+      "channelId": "channel_1",
+      "authorId": "user_2",
+      "text": "The conference schedule just dropped! Check-in starts at 8 AM tomorrow. Opening ceremony is at 7 PM in the Grand Ballroom. Business casual for Day 1, professional attire for Day 2.",
+      "timestamp": "Apr 2, 9:15 AM",
+      "reactions": [{"emoji": "📋", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_103",
+      "channelId": "channel_1",
+      "authorId": "user_8",
+      "text": "I just finished packing. Three copies of my materials, laptop charged, backup on USB drive. Not taking any chances! 😂",
+      "timestamp": "Apr 2, 10:45 AM",
+      "reactions": [{"emoji": "😂", "count": 6}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_104",
+      "channelId": "channel_1",
+      "authorId": "user_14",
+      "text": "Is anyone driving up together from Cherry Creek? I have room for 2 more people. Leaving at 7 AM Friday.",
+      "timestamp": "Apr 2, 11:20 AM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_105",
+      "channelId": "channel_1",
+      "authorId": "user_3",
+      "text": "I'll take a spot! Messaging you now.",
+      "timestamp": "Apr 2, 11:35 AM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_106",
+      "channelId": "channel_1",
+      "authorId": "user_6",
+      "text": "Reminder from Ms. Rivera: all students need to submit the signed permission slip to room 204 by TODAY. Anyone who hasn't submitted cannot attend. This is mandatory.",
+      "timestamp": "Apr 2, 1:00 PM",
+      "reactions": [{"emoji": "⚠️", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_107",
+      "channelId": "channel_1",
+      "authorId": "user_10",
+      "text": "This is my third State Conference and I'm still nervous 😅 The energy at Marriott DTC is electric. You're all going to crush it.",
+      "timestamp": "Apr 2, 2:30 PM",
+      "reactions": [{"emoji": "❤️", "count": 9}, {"emoji": "🔥", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_108",
+      "channelId": "channel_1",
+      "authorId": "user_12",
+      "text": "Opening ceremony was AMAZING. Keynote speaker was incredible — really got me fired up. Who's going to the networking dinner tonight?",
+      "timestamp": "Apr 2, 8:45 PM",
+      "reactions": [{"emoji": "🎉", "count": 7}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_109",
+      "channelId": "channel_1",
+      "authorId": "user_4",
+      "text": "The keynote was so good. 'Leadership isn't a title, it's a choice' — writing that down forever.",
+      "timestamp": "Apr 2, 9:00 PM",
+      "reactions": [{"emoji": "💯", "count": 11}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_110",
+      "channelId": "channel_1",
+      "authorId": "user_9",
+      "text": "Good night everyone. Presentations start at 8 AM. Set two alarms. See you at breakfast!",
+      "timestamp": "Apr 2, 10:30 PM",
+      "reactions": [{"emoji": "😴", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_111",
+      "channelId": "channel_1",
+      "authorId": "user_5",
+      "text": "GOOD MORNING DISTRICT 12! It's competition day! We've been working for this all year. Go show those judges what Cherry Creek is made of! 🚀🚀🚀",
+      "timestamp": "Apr 3, 6:45 AM",
+      "reactions": [{"emoji": "🔥", "count": 12}, {"emoji": "🚀", "count": 8}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_112",
+      "channelId": "channel_1",
+      "authorId": "user_1",
+      "text": "Feeling ready! My presentation is at 10:30 AM in Room C-4. App is loaded and looking great. Let's GO! 💪",
+      "timestamp": "Apr 3, 7:15 AM",
+      "reactions": [{"emoji": "💪", "count": 7}, {"emoji": "🎉", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_113",
+      "channelId": "channel_1",
+      "authorId": "user_2",
+      "text": "See everyone at the Marriott tomorrow! 🎉",
+      "timestamp": "Apr 3, 8:45 AM",
+      "reactions": [{"emoji": "👏", "count": 6}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ],
+  "channel_2": [
+    {
+      "id": "msg_201",
+      "channelId": "channel_2",
+      "authorId": "user_10",
+      "text": "Hey everyone! Who's competing in Mobile App Dev? Let's share tips. I've done this event twice — happy to help first-timers.",
+      "timestamp": "Apr 1, 3:00 PM",
+      "reactions": [{"emoji": "🙌", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_202",
+      "channelId": "channel_2",
+      "authorId": "user_1",
+      "text": "First time here! Built my app in React Native with Expo. It's a full-featured FBLA member app — news feed, calendar, chat, resources. Really proud of how it turned out.",
+      "timestamp": "Apr 1, 3:15 PM",
+      "reactions": [{"emoji": "🔥", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_203",
+      "channelId": "channel_2",
+      "authorId": "user_5",
+      "text": "React Native is such a smart choice for FBLA — iOS AND Android from one codebase. Judges love seeing cross-platform apps. What state management are you using?",
+      "timestamp": "Apr 1, 3:30 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_204",
+      "channelId": "channel_2",
+      "authorId": "user_1",
+      "text": "Zustand for state management, AsyncStorage for persistence. Clean MVVM architecture. I followed the scoring rubric closely — every feature maps to a criterion.",
+      "timestamp": "Apr 1, 3:45 PM",
+      "reactions": [{"emoji": "👍", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_205",
+      "channelId": "channel_2",
+      "authorId": "user_10",
+      "text": "Pro tip: Judges ALWAYS ask about input validation. Make sure you can demo both syntactic AND semantic validation clearly. They specifically look for inline error messages, not alerts.",
+      "timestamp": "Apr 1, 4:00 PM",
+      "reactions": [{"emoji": "💡", "count": 6}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_206",
+      "channelId": "channel_2",
+      "authorId": "user_15",
+      "text": "My app is built with Flutter. Different tech stack but same principles. Made sure to nail the architecture diagram in my planning docs.",
+      "timestamp": "Apr 1, 4:30 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_207",
+      "channelId": "channel_2",
+      "authorId": "user_10",
+      "text": "Another tip: time yourself strictly. 7 minutes goes FAST. I recommend: 1 min intro, 4 min demo, 2 min architecture/planning. Don't let the demo run long.",
+      "timestamp": "Apr 2, 9:00 AM",
+      "reactions": [{"emoji": "⏱️", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_208",
+      "channelId": "channel_2",
+      "authorId": "user_5",
+      "text": "What's everyone's app topic? I did a study planner with AI suggestions. Vedaant's doing FBLA member management which is brilliant for this competition.",
+      "timestamp": "Apr 2, 11:00 AM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_209",
+      "channelId": "channel_2",
+      "authorId": "user_1",
+      "text": "Yeah — building an app FOR FBLA in an FBLA competition is very meta 😄 Hopefully judges see the creativity in it. The chat system is my wow factor.",
+      "timestamp": "Apr 2, 11:20 AM",
+      "reactions": [{"emoji": "😂", "count": 4}, {"emoji": "💯", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_210",
+      "channelId": "channel_2",
+      "authorId": "user_10",
+      "text": "That's genius. When the judge opens your app and it has a chat feature — with THIS conversation in it — that's going to blow their mind 🤯",
+      "timestamp": "Apr 2, 11:35 AM",
+      "reactions": [{"emoji": "🤯", "count": 7}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_211",
+      "channelId": "channel_2",
+      "authorId": "user_6",
+      "text": "Good luck to all my Mobile App Dev students tomorrow! I am so proud of what you've built. Go show them what Cherry Creek can do. 💙",
+      "timestamp": "Apr 2, 5:00 PM",
+      "reactions": [{"emoji": "❤️", "count": 8}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_212",
+      "channelId": "channel_2",
+      "authorId": "user_10",
+      "text": "Anyone else nervous for their presentation? 😅",
+      "timestamp": "Apr 3, 8:12 AM",
+      "reactions": [{"emoji": "🙋", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_213",
+      "channelId": "channel_2",
+      "authorId": "user_1",
+      "text": "Nervous but ready. Just ran through my demo one more time. Everything works perfectly. Let's do this!",
+      "timestamp": "Apr 3, 8:30 AM",
+      "reactions": [{"emoji": "💪", "count": 6}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ],
+  "channel_3": [
+    {
+      "id": "msg_301",
+      "channelId": "channel_3",
+      "authorId": "user_2",
+      "text": "Website Design crew — who's going to share their site for peer feedback before State?",
+      "timestamp": "Apr 1, 2:00 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_302",
+      "channelId": "channel_3",
+      "authorId": "user_7",
+      "text": "I'll share mine! It's a responsive e-commerce site. React frontend, clean CSS Grid layout. Accessibility score is 97 on Lighthouse.",
+      "timestamp": "Apr 1, 2:30 PM",
+      "reactions": [{"emoji": "🔥", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_303",
+      "channelId": "channel_3",
+      "authorId": "user_4",
+      "text": "97 Lighthouse score is incredible. The judges really pay attention to accessibility. What did you do for keyboard navigation?",
+      "timestamp": "Apr 1, 3:00 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_304",
+      "channelId": "channel_3",
+      "authorId": "user_7",
+      "text": "Full keyboard trap for modals, skip-to-content link, proper focus management, ARIA labels on all icons. It passed WCAG 2.1 AA completely.",
+      "timestamp": "Apr 1, 3:20 PM",
+      "reactions": [{"emoji": "👏", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_305",
+      "channelId": "channel_3",
+      "authorId": "user_2",
+      "text": "I focused heavily on the visual design this year. Custom color system, fluid typography, micro-animations. Hoping the design score carries me.",
+      "timestamp": "Apr 1, 4:00 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_306",
+      "channelId": "channel_3",
+      "authorId": "user_12",
+      "text": "Just finished my portfolio site for the demo!",
+      "timestamp": "Apr 2, 7:30 PM",
+      "reactions": [{"emoji": "🎉", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ],
+  "channel_4": [
+    {
+      "id": "msg_401",
+      "channelId": "channel_4",
+      "authorId": "user_2",
+      "text": "District 12 family! State Conference is 2 days away. Let's go over the game plan one more time so everyone is prepared.",
+      "timestamp": "Apr 1, 10:00 AM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_402",
+      "channelId": "channel_4",
+      "authorId": "user_6",
+      "text": "Bus departs Cherry Creek at 7:00 AM Friday (April 2). Be there at 6:45 AM. Late arrivals will not be able to board. Bring your FBLA card.",
+      "timestamp": "Apr 1, 10:30 AM",
+      "reactions": [{"emoji": "🚌", "count": 9}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_403",
+      "channelId": "channel_4",
+      "authorId": "user_11",
+      "text": "What's the dress code for Day 1 again?",
+      "timestamp": "Apr 1, 11:00 AM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_404",
+      "channelId": "channel_4",
+      "authorId": "user_6",
+      "text": "Day 1 (Friday): Business casual. Day 2 (Saturday — competition day): Business professional. Day 3 (Sunday): Business professional for awards. When in doubt, overdress.",
+      "timestamp": "Apr 1, 11:15 AM",
+      "reactions": [{"emoji": "👔", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_405",
+      "channelId": "channel_4",
+      "authorId": "user_3",
+      "text": "Who's excited about the business plan pitch? I've been working on mine for 6 months. This is it. 🏆",
+      "timestamp": "Apr 1, 12:00 PM",
+      "reactions": [{"emoji": "💪", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_406",
+      "channelId": "channel_4",
+      "authorId": "user_14",
+      "text": "I'm nervous for Organizational Leadership but I know my material cold. Practice makes perfect — I've done my speech 40 times this week 😅",
+      "timestamp": "Apr 1, 1:30 PM",
+      "reactions": [{"emoji": "😂", "count": 7}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_407",
+      "channelId": "channel_4",
+      "authorId": "user_8",
+      "text": "40 times! That's commitment. You've absolutely got this Amara.",
+      "timestamp": "Apr 1, 1:45 PM",
+      "reactions": [{"emoji": "❤️", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_408",
+      "channelId": "channel_4",
+      "authorId": "user_2",
+      "text": "Chapter photo op at 6:30 PM Friday in the hotel lobby before the opening ceremony! Everyone please be there — I want a great group shot for the yearbook.",
+      "timestamp": "Apr 2, 2:00 PM",
+      "reactions": [{"emoji": "📸", "count": 10}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_409",
+      "channelId": "channel_4",
+      "authorId": "user_4",
+      "text": "Opening ceremony was incredible! The keynote speaker had everyone on their feet. So pumped for tomorrow.",
+      "timestamp": "Apr 2, 8:30 PM",
+      "reactions": [{"emoji": "🎉", "count": 8}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_410",
+      "channelId": "channel_4",
+      "authorId": "user_5",
+      "text": "Good luck to everyone competing today! 🚀",
+      "timestamp": "Apr 3, 7:50 AM",
+      "reactions": [{"emoji": "🚀", "count": 13}, {"emoji": "💙", "count": 7}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ],
+  "channel_5": [
+    {
+      "id": "msg_501",
+      "channelId": "channel_5",
+      "authorId": "user_2",
+      "text": "Officer meeting recap: We confirmed all 47 members are registered for State. Hotel rooms are booked. Budget approved for $800 travel fund. Marcus is handling check-in table Day 1.",
+      "timestamp": "Apr 1, 6:00 PM",
+      "reactions": [{"emoji": "✅", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_502",
+      "channelId": "channel_5",
+      "authorId": "user_3",
+      "text": "I'll have the check-in spreadsheet printed and ready. Name badges are being picked up tomorrow morning.",
+      "timestamp": "Apr 1, 6:15 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_503",
+      "channelId": "channel_5",
+      "authorId": "user_2",
+      "text": "Social media is all set! I'll be posting live updates throughout the conference on the chapter Instagram. Send me your wins as they happen!",
+      "timestamp": "Apr 1, 7:00 PM",
+      "reactions": [{"emoji": "📱", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_504",
+      "channelId": "channel_5",
+      "authorId": "user_2",
+      "text": "Officer meeting recap posted in resources 📋",
+      "timestamp": "Apr 2, 6:15 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ],
+  "channel_6": [
+    {
+      "id": "msg_601",
+      "channelId": "channel_6",
+      "authorId": "user_8",
+      "text": "Hey all — sharing the scoring rubric for Business Ethics. PDF attached. Key focus areas: stakeholder analysis, ethical frameworks, case study application.",
+      "timestamp": "Apr 1, 3:00 PM",
+      "reactions": [{"emoji": "👍", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": {"id": "res_8", "title": "Mobile App Dev — Judging Rubric & Scoring Sheet"}
+    },
+    {
+      "id": "msg_602",
+      "channelId": "channel_6",
+      "authorId": "user_9",
+      "text": "Anyone have good resources for Securities & Investments? I'm solid on stocks but need help with derivatives.",
+      "timestamp": "Apr 1, 4:00 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_603",
+      "channelId": "channel_6",
+      "authorId": "user_13",
+      "text": "Investopedia's options guide is gold for derivatives. Also Khan Academy has a solid series on futures. DM me if you want my practice questions doc.",
+      "timestamp": "Apr 1, 4:30 PM",
+      "reactions": [{"emoji": "🙏", "count": 2}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_604",
+      "channelId": "channel_6",
+      "authorId": "user_10",
+      "text": "Sharing the Mobile App Dev guidelines and rubric here for anyone who needs it.",
+      "timestamp": "Apr 2, 4:00 PM",
+      "reactions": [{"emoji": "👍", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": {"id": "res_7", "title": "Mobile App Dev — Competition Guidelines 2026"}
+    }
+  ],
+  "channel_7": [
+    {
+      "id": "msg_701",
+      "channelId": "channel_7",
+      "authorId": "user_2",
+      "text": "NLC crew! Atlanta 2026, here we come. Let's make a plan. Who's qualified or expecting to qualify from State?",
+      "timestamp": "Apr 1, 5:00 PM",
+      "reactions": [{"emoji": "✈️", "count": 5}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_702",
+      "channelId": "channel_7",
+      "authorId": "user_10",
+      "text": "I qualified last year in Mobile App Dev and made top 10. This year I'm going back. The NLC experience is absolutely worth it — it changed my career direction.",
+      "timestamp": "Apr 1, 5:30 PM",
+      "reactions": [{"emoji": "🌟", "count": 6}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_703",
+      "channelId": "channel_7",
+      "authorId": "user_8",
+      "text": "I'm really hoping to qualify in Business Ethics. Top 3 go to NLC. It's competitive but I feel ready.",
+      "timestamp": "Apr 1, 6:00 PM",
+      "reactions": [{"emoji": "💪", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_704",
+      "channelId": "channel_7",
+      "authorId": "user_2",
+      "text": "NLC registration opens April 10 — mark your calendars!",
+      "timestamp": "Apr 2, 3:30 PM",
+      "reactions": [{"emoji": "📅", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ],
+  "channel_8": [
+    {
+      "id": "msg_801",
+      "channelId": "channel_8",
+      "authorId": "user_3",
+      "text": "Business Plan people — let's do one final pitch practice over video call tonight. Who's in? 8 PM?",
+      "timestamp": "Apr 1, 2:00 PM",
+      "reactions": [{"emoji": "👍", "count": 2}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_802",
+      "channelId": "channel_8",
+      "authorId": "user_11",
+      "text": "In! My pitch is 6:45 — down from 8 minutes after cutting the market size section. Feels much tighter now.",
+      "timestamp": "Apr 1, 2:15 PM",
+      "reactions": [],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_803",
+      "channelId": "channel_8",
+      "authorId": "user_14",
+      "text": "Judges always ask about the financial projections. Make sure your Year 3 numbers are defensible. They grilled me on unit economics last year.",
+      "timestamp": "Apr 1, 3:30 PM",
+      "reactions": [{"emoji": "💡", "count": 3}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    },
+    {
+      "id": "msg_804",
+      "channelId": "channel_8",
+      "authorId": "user_3",
+      "text": "My executive summary is finally done 💪",
+      "timestamp": "Apr 2, 9:45 AM",
+      "reactions": [{"emoji": "🎉", "count": 4}],
+      "readStatus": "read",
+      "imageUri": null,
+      "resource": null
+    }
+  ]
+}

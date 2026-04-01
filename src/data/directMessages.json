@@ -1,0 +1,400 @@
+[
+  {
+    "id": "dm_1",
+    "participants": ["user_1", "user_10"],
+    "unreadCount": 1,
+    "lastMessage": {
+      "text": "You're going to absolutely crush your presentation. I believe in you! 🚀",
+      "authorId": "user_10",
+      "timestamp": "Apr 3, 7:00 AM"
+    },
+    "messages": [
+      {
+        "id": "dm1_1",
+        "authorId": "user_10",
+        "text": "Hey Vedaant! I saw your post about ConnectFBLA in the Mobile App Dev channel. What framework are you using for the chat system?",
+        "timestamp": "Apr 1, 2:00 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_2",
+        "authorId": "user_1",
+        "text": "Hey Maya! I'm using Zustand for state management — it handles the chat state beautifully. FlatList with inverted prop for the message scroll.",
+        "timestamp": "Apr 1, 2:10 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_3",
+        "authorId": "user_10",
+        "text": "Smart! I used Redux last year but Zustand is so much cleaner. Did you add image picking for attachments? That's a great wow factor.",
+        "timestamp": "Apr 1, 2:20 PM",
+        "reactions": [{"emoji": "👍", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_4",
+        "authorId": "user_1",
+        "text": "Yes! Using expo-image-picker. Also added emoji reactions, read receipts, typing indicators, and resource sharing into chat. Trying to make it feel like a real messaging app.",
+        "timestamp": "Apr 1, 2:35 PM",
+        "reactions": [{"emoji": "🔥", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_5",
+        "authorId": "user_10",
+        "text": "That's incredible for an FBLA competition! Judges are going to lose their minds. Make sure you have a clean 7-minute script that hits every rubric point.",
+        "timestamp": "Apr 1, 3:00 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_6",
+        "authorId": "user_1",
+        "text": "That's my plan. Starting with the planning doc, then MVVM architecture, then demo each feature systematically. 4 minutes for the demo should be enough.",
+        "timestamp": "Apr 1, 3:15 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_7",
+        "authorId": "user_10",
+        "text": "Perfect structure. One tip: when you demo validation, intentionally trigger both error types (syntactic and semantic) live in front of judges. They love seeing it work.",
+        "timestamp": "Apr 1, 3:30 PM",
+        "reactions": [{"emoji": "💡", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_8",
+        "authorId": "user_1",
+        "text": "Great tip! I'll add that to my demo script. Really appreciate the help Maya — you're the best.",
+        "timestamp": "Apr 1, 3:45 PM",
+        "reactions": [{"emoji": "❤️", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_9",
+        "authorId": "user_10",
+        "text": "Good luck tomorrow! Text me after your presentation. I want to hear how it goes.",
+        "timestamp": "Apr 2, 9:00 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_10",
+        "authorId": "user_1",
+        "text": "Will do! Good luck to you too! What time is your slot?",
+        "timestamp": "Apr 2, 9:10 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_11",
+        "authorId": "user_10",
+        "text": "11:45 AM in Room C-6. Back to back with lunch so I'm going last before the break. Wish me luck!",
+        "timestamp": "Apr 2, 9:20 PM",
+        "reactions": [{"emoji": "🙏", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm1_12",
+        "authorId": "user_10",
+        "text": "You're going to absolutely crush your presentation. I believe in you! 🚀",
+        "timestamp": "Apr 3, 7:00 AM",
+        "reactions": [],
+        "readStatus": "delivered",
+        "imageUri": null,
+        "resource": null
+      }
+    ]
+  },
+  {
+    "id": "dm_2",
+    "participants": ["user_1", "user_5"],
+    "unreadCount": 0,
+    "lastMessage": {
+      "text": "Meet you at the elevator at 8:15. Let's go get that trophy 🏆",
+      "authorId": "user_5",
+      "timestamp": "Apr 3, 8:00 AM"
+    },
+    "messages": [
+      {
+        "id": "dm2_1",
+        "authorId": "user_5",
+        "text": "Vedaant! Quick question — are you using React Navigation v6 or v7? I hit a weird issue with nested navigators on v7.",
+        "timestamp": "Apr 1, 5:00 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_2",
+        "authorId": "user_1",
+        "text": "Using v6! Stayed on v6 for stability — v7 still has some rough edges. What's the issue you're seeing?",
+        "timestamp": "Apr 1, 5:10 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_3",
+        "authorId": "user_5",
+        "text": "Tab navigator inside a stack navigator. The headerShown prop is being ignored in some cases. Classic react nav issue.",
+        "timestamp": "Apr 1, 5:20 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_4",
+        "authorId": "user_1",
+        "text": "Try setting headerShown: false on the tab screen inside the parent stack. That usually fixes the nested header issue.",
+        "timestamp": "Apr 1, 5:30 PM",
+        "reactions": [{"emoji": "👍", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_5",
+        "authorId": "user_5",
+        "text": "That fixed it! Thanks man. We CS kids have to stick together at these competitions 😄",
+        "timestamp": "Apr 1, 5:45 PM",
+        "reactions": [{"emoji": "😄", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_6",
+        "authorId": "user_1",
+        "text": "Absolutely! What time is your presentation tomorrow?",
+        "timestamp": "Apr 1, 6:00 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_7",
+        "authorId": "user_5",
+        "text": "9:30 AM. Early slot — actually I prefer it. Get it done and then I can relax and cheer on everyone else. You're at 10:30 right?",
+        "timestamp": "Apr 1, 6:05 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_8",
+        "authorId": "user_1",
+        "text": "Yeah 10:30 in C-4. Nervous but ready. The app is really polished — I just hope the judges appreciate the technical depth.",
+        "timestamp": "Apr 1, 6:15 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_9",
+        "authorId": "user_5",
+        "text": "Judges for Mobile App Dev are usually software engineers or CS teachers. They'll appreciate the architecture and clean code 100%.",
+        "timestamp": "Apr 1, 6:30 PM",
+        "reactions": [{"emoji": "💡", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm2_10",
+        "authorId": "user_5",
+        "text": "Meet you at the elevator at 8:15. Let's go get that trophy 🏆",
+        "timestamp": "Apr 3, 8:00 AM",
+        "reactions": [{"emoji": "🏆", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      }
+    ]
+  },
+  {
+    "id": "dm_3",
+    "participants": ["user_1", "user_2"],
+    "unreadCount": 2,
+    "lastMessage": {
+      "text": "I'm so proud of what you built. ConnectFBLA is going to win. See you at breakfast! ☀️",
+      "authorId": "user_2",
+      "timestamp": "Apr 3, 6:30 AM"
+    },
+    "messages": [
+      {
+        "id": "dm3_1",
+        "authorId": "user_2",
+        "text": "Hey Vedaant, as chapter VP I just wanted to say — the way you've represented us in Mobile App Dev this year has been amazing. The work ethic you've shown is inspiring.",
+        "timestamp": "Apr 2, 4:00 PM",
+        "reactions": [{"emoji": "❤️", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm3_2",
+        "authorId": "user_1",
+        "text": "That genuinely means so much, Sophia. FBLA and Cherry Creek are such a big part of why I love building things. I built ConnectFBLA FOR US.",
+        "timestamp": "Apr 2, 4:15 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm3_3",
+        "authorId": "user_2",
+        "text": "That's exactly why it's going to win. The authenticity comes through in every feature. You can tell it was built by someone who actually uses FBLA.",
+        "timestamp": "Apr 2, 4:30 PM",
+        "reactions": [{"emoji": "🙌", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm3_4",
+        "authorId": "user_1",
+        "text": "I hope the judges see it that way! I'll show them the real-time chat with seed messages from our actual District 12 conversations. That should make it real.",
+        "timestamp": "Apr 2, 5:00 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm3_5",
+        "authorId": "user_2",
+        "text": "That's brilliant honestly. The meta quality of an FBLA app with FBLA members talking about the FBLA competition inside the app itself 😄",
+        "timestamp": "Apr 2, 5:10 PM",
+        "reactions": [{"emoji": "😄", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm3_6",
+        "authorId": "user_2",
+        "text": "I'm so proud of what you built. ConnectFBLA is going to win. See you at breakfast! ☀️",
+        "timestamp": "Apr 3, 6:30 AM",
+        "reactions": [],
+        "readStatus": "delivered",
+        "imageUri": null,
+        "resource": null
+      }
+    ]
+  },
+  {
+    "id": "dm_4",
+    "participants": ["user_1", "user_3"],
+    "unreadCount": 0,
+    "lastMessage": {
+      "text": "Proud of you man. Go show them what we're made of!",
+      "authorId": "user_3",
+      "timestamp": "Apr 3, 7:30 AM"
+    },
+    "messages": [
+      {
+        "id": "dm4_1",
+        "authorId": "user_3",
+        "text": "Vedaant — can I see a demo of your app before State? I want to know what I'm competing against (in a friendly way lol)",
+        "timestamp": "Mar 30, 3:00 PM",
+        "reactions": [{"emoji": "😂", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm4_2",
+        "authorId": "user_1",
+        "text": "Ha! Sure! Different events though — you're Business Plan, I'm Mobile App. No conflict! Come by room 204 after school tomorrow.",
+        "timestamp": "Mar 30, 3:15 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm4_3",
+        "authorId": "user_3",
+        "text": "Did the demo — this app is legit. The chat feature alone is better than some production apps I've used. You're going to place top 3 for sure.",
+        "timestamp": "Mar 31, 4:30 PM",
+        "reactions": [{"emoji": "🔥", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm4_4",
+        "authorId": "user_1",
+        "text": "That's the goal! Your business plan sounds equally impressive from what you shared in the channel. The sustainability angle is really smart.",
+        "timestamp": "Mar 31, 4:45 PM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm4_5",
+        "authorId": "user_3",
+        "text": "Thanks! Okay let's both win tomorrow and go to NLC Atlanta together. Deal?",
+        "timestamp": "Apr 2, 8:00 PM",
+        "reactions": [{"emoji": "🤝", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm4_6",
+        "authorId": "user_1",
+        "text": "DEAL. Atlanta 2026, let's go! 🏆✈️",
+        "timestamp": "Apr 2, 8:05 PM",
+        "reactions": [{"emoji": "✈️", "count": 1}],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      },
+      {
+        "id": "dm4_7",
+        "authorId": "user_3",
+        "text": "Proud of you man. Go show them what we're made of!",
+        "timestamp": "Apr 3, 7:30 AM",
+        "reactions": [],
+        "readStatus": "read",
+        "imageUri": null,
+        "resource": null
+      }
+    ]
+  }
+]

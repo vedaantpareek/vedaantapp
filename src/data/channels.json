@@ -1,0 +1,90 @@
+[
+  {
+    "id": "channel_1",
+    "name": "State Conference 2026",
+    "description": "Official channel for Colorado FBLA State Conference — April 2–4, 2026 at the Marriott Denver Tech Center",
+    "icon": "ribbon",
+    "color": "#C9A84C",
+    "memberIds": ["user_1","user_2","user_3","user_4","user_5","user_6","user_7","user_8","user_9","user_10","user_11","user_12","user_13","user_14","user_15"],
+    "lastMessage": {"text": "See everyone at the Marriott tomorrow! 🎉", "authorId": "user_2", "timestamp": "Apr 3, 8:45 AM"},
+    "unreadCount": 5,
+    "isPinned": true
+  },
+  {
+    "id": "channel_2",
+    "name": "Mobile App Dev",
+    "description": "Connect with Mobile Application Development competitors — tips, resources, and demo prep",
+    "icon": "phone-portrait",
+    "color": "#1B3A6B",
+    "memberIds": ["user_1","user_5","user_10","user_15","user_6"],
+    "lastMessage": {"text": "Anyone else nervous for their presentation? 😅", "authorId": "user_10", "timestamp": "Apr 3, 8:12 AM"},
+    "unreadCount": 3,
+    "isPinned": false
+  },
+  {
+    "id": "channel_3",
+    "name": "Website Design",
+    "description": "Website Design competitors — share sites, get feedback, discuss judging criteria",
+    "icon": "globe",
+    "color": "#805AD5",
+    "memberIds": ["user_2","user_7","user_4","user_12"],
+    "lastMessage": {"text": "Just finished my portfolio site for the demo!", "authorId": "user_7", "timestamp": "Apr 2, 7:30 PM"},
+    "unreadCount": 0,
+    "isPinned": false
+  },
+  {
+    "id": "channel_4",
+    "name": "District 12 General",
+    "description": "General discussion for all District 12 FBLA members",
+    "icon": "people",
+    "color": "#38A169",
+    "memberIds": ["user_1","user_2","user_3","user_4","user_5","user_6","user_7","user_8","user_9","user_10","user_11","user_12","user_13","user_14","user_15"],
+    "lastMessage": {"text": "Good luck to everyone competing today! 🚀", "authorId": "user_5", "timestamp": "Apr 3, 7:50 AM"},
+    "unreadCount": 8,
+    "isPinned": false
+  },
+  {
+    "id": "channel_5",
+    "name": "Leadership & Officers",
+    "description": "Chapter officers coordination — agendas, announcements, and officer business",
+    "icon": "shield",
+    "color": "#2C5282",
+    "memberIds": ["user_2","user_3","user_4","user_5","user_6","user_12"],
+    "lastMessage": {"text": "Officer meeting recap posted in resources 📋", "authorId": "user_2", "timestamp": "Apr 2, 6:15 PM"},
+    "unreadCount": 1,
+    "isPinned": false
+  },
+  {
+    "id": "channel_6",
+    "name": "Study Resources",
+    "description": "Share study guides, practice tests, and helpful links for all competitive events",
+    "icon": "book",
+    "color": "#2C7A7B",
+    "memberIds": ["user_1","user_2","user_3","user_4","user_5","user_7","user_8","user_9","user_10","user_13"],
+    "lastMessage": {"text": "Shared the scoring rubric PDF — check it out!", "authorId": "user_8", "timestamp": "Apr 2, 4:00 PM"},
+    "unreadCount": 2,
+    "isPinned": false
+  },
+  {
+    "id": "channel_7",
+    "name": "NLC Prep",
+    "description": "National Leadership Conference preparation — Atlanta 2026 bound members",
+    "icon": "rocket",
+    "color": "#DD6B20",
+    "memberIds": ["user_2","user_5","user_8","user_10","user_14"],
+    "lastMessage": {"text": "NLC registration opens April 10 — mark your calendars!", "authorId": "user_2", "timestamp": "Apr 2, 3:30 PM"},
+    "unreadCount": 0,
+    "isPinned": false
+  },
+  {
+    "id": "channel_8",
+    "name": "Business Plan",
+    "description": "Business Plan and Entrepreneurship competitors — pitch practice and feedback",
+    "icon": "briefcase",
+    "color": "#D53F8C",
+    "memberIds": ["user_3","user_11","user_14","user_4"],
+    "lastMessage": {"text": "My executive summary is finally done 💪", "authorId": "user_3", "timestamp": "Apr 2, 9:45 AM"},
+    "unreadCount": 0,
+    "isPinned": false
+  }
+]

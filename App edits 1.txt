@@ -1,0 +1,24 @@
+1. Home Page
+A. At the very top of the home page, it should always show a Welcome <user> text
+      A. Below the welcome message there should be 4-6 quick actions buttons (such as 4 buttons that   	 cick on any other page without having to go to the bottom) or any other useful quality of life thing that you think could fit the space. Just having a newsfeed looks weird as a home page.
+      B. The top of the newsfeed is cutoff.
+      C. There is a random share button in the top right corner.
+      D. When you like a newsfeed, it doesn't stay liked when you exit from it.
+
+2. Calendar
+      A. On every other day besides April 2-4, it has the same 5 upcoming events.
+         i. It should have 3-4 events besides state (e.g. Coffee Hour) instead of just these 5 permanently being there.
+
+3. Resources
+       A. Remove website design, and the filter tab at the top. It should only keep Mobile App Development and general resources, and can say at the bottom "See your administrator/officer if you have not received your event role" 
+       B. The resources should be inbuilt into the app - not like they are currently. Currently they are linking to nonexistent webpages on the FBLA website that aren't actual articles. Generate those articles that you can put in there.
+       C. In the search tab, there are two separate X's that both have the same purpose of deleting all of the characters in the search box, so remove one of them.
+       D. When you bookmark a resource, when you click out of it, it doesn't stay bookmarked. Bookmarked items should also stay at the top of the resources feed.
+
+4. Connect/Chat
+       A. You cannot actually react with an emoji to other people's messages.
+       B. When you click the white button in the top right corner (which should be more defined as a new chat button), you can see other members but when you click on someone you have never chatted with before, you can't actually start a new chat with them.
+       
+5. Member Profile
+      A. You should be able to edit your profile picture in the member profile tab.
+      B. The social media channel at the bottom of the member page should be greyed out, with all the icons, and then should say "Click to link to social media apps" where you can proceed to do that. There should be a social media tab at the bottom of the home page, which is connected to the national FBLA social media accounts.
