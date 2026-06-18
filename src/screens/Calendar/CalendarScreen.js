@@ -277,7 +277,7 @@ export default function CalendarScreen({ navigation, route }) {
           .map(([type, color]) => (
             <View key={type} style={styles.legendItem}>
               <View style={[styles.legendDot, { backgroundColor: color }]} />
-              <Text style={styles.legendLabel}>{type.charAt(0).toUpperCase() + type.slice(1)}</Text>
+              <Text style={styles.legendLabel}>{type === 'nlc' ? 'NLC' : type.charAt(0).toUpperCase() + type.slice(1)}</Text>
             </View>
           ))}
       </View>

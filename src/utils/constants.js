@@ -1,12 +1,12 @@
 /**
  * ConnectFBLA Global Constants
  * APP_DATE is the hardcoded "current" date for all demo/calendar/feed purposes.
- * Using April 3, 2026 — the day of the State Conference presentation.
+ * Using June 30, 2026 — Day 2 of the National Leadership Conference in San Antonio.
  */
 
 // App base date — hardcoded for demo stability
-export const APP_DATE = new Date('2026-04-03T09:00:00');
-export const APP_DATE_STRING = '2026-04-03';
+export const APP_DATE = new Date('2026-06-30T09:00:00');
+export const APP_DATE_STRING = '2026-06-30';
 
 // App metadata
 export const APP_NAME = 'ConnectFBLA';

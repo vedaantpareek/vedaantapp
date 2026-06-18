@@ -222,13 +222,11 @@ export default function AnnouncementDetailScreen({ route, navigation }) {
         <TouchableOpacity
           onPress={() => setShareVisible(true)}
           activeOpacity={0.6}
-          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          style={{ marginRight: 8 }}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          style={{ padding: 4 }}
           accessibilityLabel="Share this announcement"
         >
-          <View style={styles.headerCircleBtn}>
-            <Ionicons name="share-social-outline" size={18} color={COLORS.primary} />
-          </View>
+          <Ionicons name="share-social-outline" size={24} color="#000" />
         </TouchableOpacity>
       ),
     });
@@ -579,16 +577,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  headerCircleBtn: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: 'rgba(255,255,255,0.92)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-
   commentsSection: { marginBottom: SPACING.md },
   commentsSectionHeader: {
     flexDirection: 'row',

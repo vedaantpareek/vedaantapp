@@ -90,34 +90,82 @@
     "startTime": "12:00 AM",
     "endTime": "11:59 PM",
     "location": "Online — fbla.org/nlc",
-    "description": "National Leadership Conference 2026 registration opens. NLC will be held June 24–27, 2026 in Atlanta, Georgia. Only State Conference qualifiers (top 3 in each event) are eligible to register for NLC. Registration fee: $75 per member plus travel and hotel.",
+    "description": "National Leadership Conference 2026 registration opens. NLC will be held June 29 – July 3, 2026 in San Antonio, Texas. Only State Conference qualifiers (top 3 in each event) are eligible to register for NLC. Registration fee: $75 per member plus travel and hotel.",
     "type": "nlc",
-    "isRsvped": false,
-    "notes": "Register immediately if you qualify at State!"
+    "isRsvped": true,
+    "notes": "Registered ✓ Confirmation #NLC2026-4471"
   },
   {
     "id": "evt_9",
     "title": "NLC Registration Deadline",
-    "date": "2026-05-01",
+    "date": "2026-05-09",
     "startTime": "11:59 PM",
     "endTime": "11:59 PM",
     "location": "Online — fbla.org/nlc",
     "description": "Final deadline for National Leadership Conference 2026 registration. All NLC-qualifying members must be registered and fees paid by this date. Contact Ms. Rivera for assistance with paperwork.",
     "type": "nlc",
     "isRsvped": false,
-    "notes": ""
+    "notes": "Already registered ✓"
   },
   {
     "id": "evt_10",
-    "title": "National Leadership Conference — Atlanta 2026",
-    "date": "2026-06-24",
+    "title": "NLC Day 1 — Opening Ceremony & Check-In",
+    "date": "2026-06-29",
     "startTime": "8:00 AM",
-    "endTime": "11:00 PM",
-    "location": "Georgia World Congress Center, Atlanta, GA",
-    "description": "The 2026 FBLA National Leadership Conference in Atlanta, Georgia — June 24–27. The pinnacle of FBLA competitive events. Top competitors from every state compete for national recognition. Over 12,000 FBLA members attend NLC annually. Formal business attire required for all competitive events.",
+    "endTime": "10:00 PM",
+    "location": "Henry B. González Convention Center, 200 E Market St, San Antonio, TX",
+    "description": "Day 1 of the 2026 FBLA National Leadership Conference in San Antonio, Texas. Members check in, attend the Opening Ceremony with keynote speaker, and experience the first evening's social events. Over 15,000 FBLA members from all 50 states attend NLC. Business professional attire required for the ceremony.",
     "type": "nlc",
-    "isRsvped": false,
-    "notes": "4 days of events, June 24–27, 2026"
+    "isRsvped": true,
+    "notes": "Arrive early for check-in. Bring NLC badge and two forms of ID."
+  },
+  {
+    "id": "evt_10b",
+    "title": "NLC Day 2 — Competitive Events Begin",
+    "date": "2026-06-30",
+    "startTime": "8:00 AM",
+    "endTime": "9:00 PM",
+    "location": "Henry B. González Convention Center, 200 E Market St, San Antonio, TX",
+    "description": "Day 2 of NLC — first round of competitive events across 70+ categories. Business professional attire required for all competitive sessions. Check the FBLA NLC app for your specific room assignment and schedule. Evening block party on the convention plaza.",
+    "type": "nlc",
+    "isRsvped": true,
+    "notes": "TODAY — Check NLC app for schedule. Block party tonight!"
+  },
+  {
+    "id": "evt_10c",
+    "title": "NLC Day 3 — Mobile App Dev Finals",
+    "date": "2026-07-01",
+    "startTime": "9:00 AM",
+    "endTime": "9:00 PM",
+    "location": "Henry B. González Convention Center, 200 E Market St, San Antonio, TX",
+    "description": "Day 3 of NLC — competitive event finals including Mobile Application Development. National officer candidate speeches at the morning general session. Voting for national officers opens today. Texas Rodeo Night in the evening.",
+    "type": "nlc",
+    "isRsvped": true,
+    "notes": "PRESENTATION DAY — Mobile App Dev slot: 10:30 AM, Hall C-4. Arrive 15 min early."
+  },
+  {
+    "id": "evt_10d",
+    "title": "NLC Day 4 — General Session & Officer Elections",
+    "date": "2026-07-02",
+    "startTime": "8:00 AM",
+    "endTime": "9:00 PM",
+    "location": "Henry B. González Convention Center, 200 E Market St, San Antonio, TX",
+    "description": "Day 4 of NLC — national officer election results announced at general session. Leadership workshops and career development sessions throughout the day. Pin trading and chapter networking in the exhibit hall.",
+    "type": "nlc",
+    "isRsvped": true,
+    "notes": "National officer results announced at 10:00 AM general session."
+  },
+  {
+    "id": "evt_10e",
+    "title": "NLC Day 5 — Awards Ceremony & Closing",
+    "date": "2026-07-03",
+    "startTime": "9:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Henry B. González Convention Center, 200 E Market St, San Antonio, TX",
+    "description": "Final day of the 2026 FBLA NLC. Competitive event award results announced at the closing awards ceremony. National officer installation. Celebrate the achievements of FBLA members from across the country. Check-out by 2:00 PM.",
+    "type": "nlc",
+    "isRsvped": true,
+    "notes": "Awards start at 10:00 AM. Flight home at 5:00 PM — check-out by noon."
   },
   {
     "id": "evt_11",
@@ -198,10 +246,10 @@
     "startTime": "3:30 PM",
     "endTime": "5:00 PM",
     "location": "Cherry Creek High School — Room 204",
-    "description": "Final logistics meeting for the Atlanta NLC trip. Covers flight details, hotel check-in procedures, competition schedules, per diem, and packing guidelines. All NLC-attending members and their parents/guardians are strongly encouraged to attend.",
+    "description": "Final logistics meeting for the San Antonio NLC trip. Covers flight details, hotel check-in procedures, competition schedules, per diem, and packing guidelines. All NLC-attending members and their parents/guardians are strongly encouraged to attend.",
     "type": "nlc",
-    "isRsvped": false,
-    "notes": ""
+    "isRsvped": true,
+    "notes": "Attended ✓"
   },
   {
     "id": "evt_18",

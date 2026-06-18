@@ -7,29 +7,6 @@ import { SCREENS } from '../utils/constants';
 
 const Stack = createNativeStackNavigator();
 
-function CircleBtn({ onPress, iconName, iconSize = 18 }) {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={0.6}
-      hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-      style={{ marginRight: 12 }}
-    >
-      <View style={{
-        width: 32,
-        height: 32,
-        borderRadius: 16,
-        backgroundColor: 'rgba(255,255,255,0.92)',
-        justifyContent: 'center',
-        alignItems: 'center',
-        overflow: 'hidden',
-      }}>
-        <Ionicons name={iconName} size={iconSize} color={COLORS.primary} />
-      </View>
-    </TouchableOpacity>
-  );
-}
-
 export default function ConnectStack() {
   const ChatListScreen = require('../screens/Connect/ChatListScreen').default;
   const GroupChannelScreen = require('../screens/Connect/GroupChannelScreen').default;
@@ -45,26 +22,40 @@ export default function ConnectStack() {
         headerTitleAlign: 'center',
         headerShadowVisible: false,
         headerBackTitleVisible: false,
-        headerRightContainerStyle: { paddingRight: 4, backgroundColor: 'transparent' },
-        headerLeftContainerStyle: { paddingLeft: 4, backgroundColor: 'transparent' },
+        headerLeftContainerStyle: { paddingLeft: 4 },
+        headerRightContainerStyle: { paddingRight: 4 },
       }}
     >
-      {/* ── Chat list — search button ────────────────────────────── */}
+      {/* ── Chat list — back to home + search ──────────────────────── */}
       <Stack.Screen
         name={SCREENS.CHAT_LIST}
         component={ChatListScreen}
         options={({ navigation }) => ({
           title: 'Connect',
+          headerLeft: ({ tintColor }) => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('HomeTab')}
+              activeOpacity={0.6}
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              style={{ padding: 4 }}
+            >
+              <Ionicons name="chevron-back" size={24} color="#000" />
+            </TouchableOpacity>
+          ),
           headerRight: () => (
-            <CircleBtn
+            <TouchableOpacity
               onPress={() => navigation.navigate(SCREENS.NEW_MESSAGE)}
-              iconName="search"
-            />
+              activeOpacity={0.6}
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              style={{ padding: 4 }}
+            >
+              <Ionicons name="search" size={24} color="#000" />
+            </TouchableOpacity>
           ),
         })}
       />
 
-      {/* ── Group channel — name + member count in title; headerRight set by GroupChannelScreen ── */}
+      {/* ── Group channel — name + member count in title; headerLeft/Right set by GroupChannelScreen ── */}
       <Stack.Screen
         name={SCREENS.GROUP_CHANNEL}
         component={GroupChannelScreen}
@@ -82,7 +73,7 @@ export default function ConnectStack() {
         })}
       />
 
-      {/* ── Direct message — name + online status in title, + circle on right ── */}
+      {/* ── Direct message — name + online status in title + person-add ── */}
       <Stack.Screen
         name={SCREENS.DIRECT_MESSAGE}
         component={DirectMessageScreen}
@@ -106,10 +97,14 @@ export default function ConnectStack() {
             </View>
           ),
           headerRight: () => (
-            <CircleBtn
+            <TouchableOpacity
               onPress={() => navigation.navigate(SCREENS.NEW_MESSAGE)}
-              iconName="person-add"
-            />
+              activeOpacity={0.6}
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              style={{ padding: 4 }}
+            >
+              <Ionicons name="person-add" size={24} color="#000" />
+            </TouchableOpacity>
           ),
         })}
       />

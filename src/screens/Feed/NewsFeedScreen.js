@@ -53,7 +53,7 @@ const QUICK_ACTIONS = [
   { id: 'resources', label: 'Resources', icon: 'library', tab: 'ResourcesTab' },
   { id: 'chat', label: 'Connect', icon: 'chatbubbles', tab: 'ConnectTab' },
   { id: 'profile', label: 'My Profile', icon: 'person', tab: 'ProfileTab' },
-  { id: 'conference', label: 'State Conf.', icon: 'trophy', tab: 'CalendarTab', isConference: true },
+  { id: 'conference', label: 'NLC 2026', icon: 'trophy', tab: 'CalendarTab', isConference: true },
 ];
 
 // ---------------------------------------------------------------------------
@@ -258,7 +258,7 @@ export default function NewsFeedScreen({ navigation }) {
       if (action.isConference) {
         navigation.navigate('CalendarTab', {
           screen: SCREENS.CALENDAR,
-          params: { jumpToDate: '2026-04-03' },
+          params: { jumpToDate: '2026-06-29' },
         });
       } else {
         navigation.navigate(action.tab);

@@ -1,5 +1,7 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Ionicons } from '@expo/vector-icons';
 import COLORS from '../theme/colors';
 import { SCREENS } from '../utils/constants';
 
@@ -16,12 +18,27 @@ export default function ResourceStack() {
         headerTintColor: COLORS.white,
         headerTitleStyle: { fontWeight: '700' },
         headerShadowVisible: false,
+        headerBackTitleVisible: false,
+        headerLeftContainerStyle: { paddingLeft: 4 },
+        headerRightContainerStyle: { paddingRight: 4 },
       }}
     >
       <Stack.Screen
         name={SCREENS.RESOURCES}
         component={ResourcesScreen}
-        options={{ title: 'Resources' }}
+        options={({ navigation }) => ({
+          title: 'Resources',
+          headerLeft: ({ tintColor }) => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('HomeTab')}
+              activeOpacity={0.6}
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              style={{ padding: 4 }}
+            >
+              <Ionicons name="chevron-back" size={24} color="#000" />
+            </TouchableOpacity>
+          ),
+        })}
       />
       <Stack.Screen
         name={SCREENS.RESOURCE_DETAIL}

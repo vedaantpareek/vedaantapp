@@ -113,7 +113,7 @@ export default function GroupChannelScreen({ route, navigation }) {
   // Set header buttons — custom back (handles cross-tab navigation) + add-members
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerLeft: () => (
+      headerLeft: ({ tintColor }) => (
         <TouchableOpacity
           onPress={() => {
             if (navigation.canGoBack()) {
@@ -123,24 +123,20 @@ export default function GroupChannelScreen({ route, navigation }) {
             }
           }}
           activeOpacity={0.6}
-          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          style={{ marginLeft: 12 }}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          style={{ padding: 4 }}
         >
-          <View style={styles.headerCircleBtn}>
-            <Ionicons name="arrow-back" size={18} color={COLORS.primary} />
-          </View>
+          <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
       ),
       headerRight: () => (
         <TouchableOpacity
           onPress={() => setAddMembersVisible(true)}
           activeOpacity={0.6}
-          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          style={{ marginRight: 12 }}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          style={{ padding: 4 }}
         >
-          <View style={styles.headerCircleBtn}>
-            <Ionicons name="person-add" size={18} color={COLORS.primary} />
-          </View>
+          <Ionicons name="person-add" size={24} color="#000" />
         </TouchableOpacity>
       ),
     });
@@ -426,15 +422,6 @@ const styles = StyleSheet.create({
   listContent: {
     paddingVertical: SPACING.sm,
     paddingBottom: SPACING.md,
-  },
-  headerCircleBtn: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: 'rgba(255,255,255,0.92)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
   },
   headerRight: {
     flexDirection: 'row',
