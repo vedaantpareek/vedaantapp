@@ -7,8 +7,14 @@
     "category": "NLC",
     "imageUrl": null,
     "timestamp": "2026-06-26T14:30:00",
-    "likes": ["user_1", "user_2", "user_3", "user_5", "user_10"],
-    "commentCount": 8,
+    "likes": [
+      "user_1",
+      "user_2",
+      "user_3",
+      "user_5",
+      "user_10"
+    ],
+    "commentCount": 7,
     "shareCount": 12,
     "isPinned": true
   },
@@ -20,8 +26,19 @@
     "category": "Chapter News",
     "imageUrl": null,
     "timestamp": "2026-06-22T09:15:00",
-    "likes": ["user_1", "user_2", "user_4", "user_6", "user_7", "user_8", "user_9", "user_10", "user_11", "user_12"],
-    "commentCount": 12,
+    "likes": [
+      "user_1",
+      "user_2",
+      "user_4",
+      "user_6",
+      "user_7",
+      "user_8",
+      "user_9",
+      "user_10",
+      "user_11",
+      "user_12"
+    ],
+    "commentCount": 7,
     "shareCount": 34,
     "isPinned": false
   },
@@ -33,8 +50,13 @@
     "category": "National News",
     "imageUrl": null,
     "timestamp": "2026-06-10T11:00:00",
-    "likes": ["user_1", "user_3", "user_5", "user_14"],
-    "commentCount": 5,
+    "likes": [
+      "user_1",
+      "user_3",
+      "user_5",
+      "user_14"
+    ],
+    "commentCount": 4,
     "shareCount": 9,
     "isPinned": false
   },
@@ -46,8 +68,16 @@
     "category": "Event Tips",
     "imageUrl": null,
     "timestamp": "2026-06-28T16:45:00",
-    "likes": ["user_1", "user_2", "user_5", "user_6", "user_7", "user_11", "user_15"],
-    "commentCount": 6,
+    "likes": [
+      "user_1",
+      "user_2",
+      "user_5",
+      "user_6",
+      "user_7",
+      "user_11",
+      "user_15"
+    ],
+    "commentCount": 5,
     "shareCount": 22,
     "isPinned": false
   },
@@ -59,8 +89,13 @@
     "category": "NLC",
     "imageUrl": null,
     "timestamp": "2026-06-30T08:00:00",
-    "likes": ["user_2", "user_3", "user_8", "user_10"],
-    "commentCount": 7,
+    "likes": [
+      "user_2",
+      "user_3",
+      "user_8",
+      "user_10"
+    ],
+    "commentCount": 4,
     "shareCount": 18,
     "isPinned": false
   },
@@ -72,7 +107,12 @@
     "category": "Resources",
     "imageUrl": null,
     "timestamp": "2026-06-24T12:30:00",
-    "likes": ["user_1", "user_4", "user_8", "user_14"],
+    "likes": [
+      "user_1",
+      "user_4",
+      "user_8",
+      "user_14"
+    ],
     "commentCount": 3,
     "shareCount": 6,
     "isPinned": false
@@ -85,8 +125,21 @@
     "category": "Chapter News",
     "imageUrl": null,
     "timestamp": "2026-03-10T15:00:00",
-    "likes": ["user_1", "user_2", "user_3", "user_4", "user_6", "user_7", "user_8", "user_9", "user_11", "user_13", "user_14", "user_15"],
-    "commentCount": 5,
+    "likes": [
+      "user_1",
+      "user_2",
+      "user_3",
+      "user_4",
+      "user_6",
+      "user_7",
+      "user_8",
+      "user_9",
+      "user_11",
+      "user_13",
+      "user_14",
+      "user_15"
+    ],
+    "commentCount": 4,
     "shareCount": 45,
     "isPinned": false
   },
@@ -98,8 +151,14 @@
     "category": "Leadership",
     "imageUrl": null,
     "timestamp": "2026-06-18T10:00:00",
-    "likes": ["user_1", "user_2", "user_6", "user_11", "user_15"],
-    "commentCount": 4,
+    "likes": [
+      "user_1",
+      "user_2",
+      "user_6",
+      "user_11",
+      "user_15"
+    ],
+    "commentCount": 3,
     "shareCount": 11,
     "isPinned": false
   },
@@ -111,8 +170,13 @@
     "category": "NLC",
     "imageUrl": null,
     "timestamp": "2026-06-28T14:00:00",
-    "likes": ["user_4", "user_9", "user_13", "user_5"],
-    "commentCount": 5,
+    "likes": [
+      "user_4",
+      "user_9",
+      "user_13",
+      "user_5"
+    ],
+    "commentCount": 2,
     "shareCount": 14,
     "isPinned": false
   },
@@ -124,7 +188,12 @@
     "category": "Leadership",
     "imageUrl": null,
     "timestamp": "2026-06-30T09:00:00",
-    "likes": ["user_14", "user_12", "user_8", "user_1"],
+    "likes": [
+      "user_14",
+      "user_12",
+      "user_8",
+      "user_1"
+    ],
     "commentCount": 4,
     "shareCount": 8,
     "isPinned": false
@@ -137,8 +206,13 @@
     "category": "Event Tips",
     "imageUrl": null,
     "timestamp": "2026-06-25T20:00:00",
-    "likes": ["user_1", "user_5", "user_7", "user_15"],
-    "commentCount": 5,
+    "likes": [
+      "user_1",
+      "user_5",
+      "user_7",
+      "user_15"
+    ],
+    "commentCount": 4,
     "shareCount": 19,
     "isPinned": false
   },
@@ -150,7 +224,12 @@
     "category": "Colorado",
     "imageUrl": null,
     "timestamp": "2026-03-12T11:30:00",
-    "likes": ["user_3", "user_8", "user_9", "user_14"],
+    "likes": [
+      "user_3",
+      "user_8",
+      "user_9",
+      "user_14"
+    ],
     "commentCount": 4,
     "shareCount": 10,
     "isPinned": false
@@ -163,7 +242,13 @@
     "category": "National News",
     "imageUrl": null,
     "timestamp": "2026-06-29T13:00:00",
-    "likes": ["user_2", "user_6", "user_7", "user_1", "user_3"],
+    "likes": [
+      "user_2",
+      "user_6",
+      "user_7",
+      "user_1",
+      "user_3"
+    ],
     "commentCount": 5,
     "shareCount": 7,
     "isPinned": false
@@ -176,7 +261,22 @@
     "category": "Spotlight",
     "imageUrl": null,
     "timestamp": "2026-06-21T16:00:00",
-    "likes": ["user_2", "user_3", "user_4", "user_5", "user_6", "user_7", "user_8", "user_9", "user_10", "user_11", "user_12", "user_13", "user_14", "user_15"],
+    "likes": [
+      "user_2",
+      "user_3",
+      "user_4",
+      "user_5",
+      "user_6",
+      "user_7",
+      "user_8",
+      "user_9",
+      "user_10",
+      "user_11",
+      "user_12",
+      "user_13",
+      "user_14",
+      "user_15"
+    ],
     "commentCount": 6,
     "shareCount": 28,
     "isPinned": false
@@ -189,8 +289,15 @@
     "category": "NLC",
     "imageUrl": null,
     "timestamp": "2026-06-29T22:00:00",
-    "likes": ["user_1", "user_2", "user_3", "user_10", "user_5", "user_7"],
-    "commentCount": 9,
+    "likes": [
+      "user_1",
+      "user_2",
+      "user_3",
+      "user_10",
+      "user_5",
+      "user_7"
+    ],
+    "commentCount": 2,
     "shareCount": 24,
     "isPinned": true
   }

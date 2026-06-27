@@ -3,139 +3,134 @@
  * Rules:
  *  - comment authorId must NOT equal the post's authorId (no self-replies)
  *  - comments are contextually relevant to the post content
- *  - timestamps are after the post's published timestamp
+ *  - timestamps are after the post's published timestamp (and on/before APP_DATE)
+ *  - the current user (user_1) does not appear here — their own comments live
+ *    only in AsyncStorage, never in the seeded fallback set
  */
 
 const POST_COMMENTS = {
-  // post_1 — Zoe Harrison (user_12): State Conference Schedule
+  // post_1 — Zoe Harrison (user_12): NLC 2026 San Antonio Competitive Event Schedule
   post_1: [
-    { id: 'c1_1', authorId: 'user_1',  text: "Checked my slot — Mobile App Dev is at 10:30 AM in Room C-4! Thanks for posting this, Zoe.", timestamp: '2026-03-28T15:10:00Z' },
-    { id: 'c1_2', authorId: 'user_2',  text: "Found mine too! Website Design is Saturday at 11 AM. Can't believe it's almost here.", timestamp: '2026-03-28T16:20:00Z' },
-    { id: 'c1_3', authorId: 'user_5',  text: "Pro tip: arrive 20 minutes early. The parking garage at Marriott DTC fills up fast on competition morning.", timestamp: '2026-03-29T09:00:00Z' },
-    { id: 'c1_4', authorId: 'user_10', text: "Third year going to State and I still get butterflies reading the schedule! We've got this, everyone. 💙", timestamp: '2026-03-29T11:30:00Z' },
-    { id: 'c1_5', authorId: 'user_3',  text: "Do we need to bring a printed event confirmation, or is digital on the phone okay for check-in?", timestamp: '2026-03-29T14:00:00Z' },
-    { id: 'c1_6', authorId: 'user_7',  text: "First time at State — any advice for first-timers? Super nervous about everything!", timestamp: '2026-03-30T10:00:00Z' },
-    { id: 'c1_7', authorId: 'user_8',  text: "Jordan, just be confident! Judges respond to enthusiasm. You know your material — trust your prep.", timestamp: '2026-03-30T11:15:00Z' },
-    { id: 'c1_8', authorId: 'user_9',  text: "Already set four alarms for Friday morning. Not missing that bus for anything. 😅", timestamp: '2026-03-31T08:00:00Z' },
+    { id: 'c1_2', authorId: 'user_2',  text: "Found mine — Website Design is July 1 at 11 AM. Can't believe NLC is finally here!", timestamp: '2026-06-26T16:20:00' },
+    { id: 'c1_3', authorId: 'user_5',  text: "Pro tip: get to the convention center early. The González Center is huge and finding your room takes time.", timestamp: '2026-06-26T18:00:00' },
+    { id: 'c1_4', authorId: 'user_10', text: "Third NLC and I still get butterflies reading the schedule! We've got this, Falcons. 💙", timestamp: '2026-06-26T20:30:00' },
+    { id: 'c1_5', authorId: 'user_3',  text: "Do we need a printed event confirmation, or is the digital badge on the app okay for check-in?", timestamp: '2026-06-27T08:00:00' },
+    { id: 'c1_6', authorId: 'user_7',  text: "First time at NLC — any advice for first-timers? Super nervous about presenting at nationals!", timestamp: '2026-06-27T09:30:00' },
+    { id: 'c1_7', authorId: 'user_8',  text: "Jordan, just be confident! National judges respond to enthusiasm. You know your material — trust your prep.", timestamp: '2026-06-27T10:45:00' },
+    { id: 'c1_8', authorId: 'user_9',  text: "Already set four alarms for July 1 morning. Not missing my presentation slot for anything. 😅", timestamp: '2026-06-27T12:00:00' },
   ],
 
-  // post_2 — Tyler Williams (user_5): District 12 Qualifiers
+  // post_2 — Tyler Williams (user_5): Cherry Creek Sends 9 Members to NLC
   post_2: [
-    { id: 'c2_1', authorId: 'user_1',  text: "So proud to be one of the 47! Cherry Creek District 12 is going to crush it at State. 🏆", timestamp: '2026-03-20T10:00:00Z' },
-    { id: 'c2_2', authorId: 'user_2',  text: "47 qualifiers is insane — that's nearly double last year's count. We've come so far as a chapter!", timestamp: '2026-03-20T11:30:00Z' },
-    { id: 'c2_3', authorId: 'user_12', text: "So incredible. Best year for our district ever. Everyone put in the work and it really shows! 🎉", timestamp: '2026-03-20T12:45:00Z' },
-    { id: 'c2_4', authorId: 'user_10', text: "Congrats to all qualifiers! See you all in Denver — let's bring home some golds.", timestamp: '2026-03-21T09:00:00Z' },
-    { id: 'c2_5', authorId: 'user_4',  text: "I qualified in Public Speaking!! First time going to State, I literally teared up when I found out 😭", timestamp: '2026-03-21T14:00:00Z' },
-    { id: 'c2_6', authorId: 'user_6',  text: "Congrats to all the CS and Business Tech qualifiers! Let's represent District 12 with pride.", timestamp: '2026-03-22T08:30:00Z' },
-    { id: 'c2_7', authorId: 'user_8',  text: "This is such a proud moment. Three years ago we barely sent 20 members to State. Now 47. Incredible growth.", timestamp: '2026-03-22T15:00:00Z' },
-    { id: 'c2_8', authorId: 'user_14', text: "This announcement gave me chills. So honored to be part of this chapter. Let's make history in Denver!", timestamp: '2026-03-23T10:00:00Z' },
+    { id: 'c2_2', authorId: 'user_2',  text: "9 members to nationals is our best showing ever — so proud to be one of them. Let's go Falcons! 🏆", timestamp: '2026-06-22T11:30:00' },
+    { id: 'c2_3', authorId: 'user_12', text: "Best national year in chapter history. Everyone put in the work and it really shows! 🎉", timestamp: '2026-06-22T12:45:00' },
+    { id: 'c2_4', authorId: 'user_10', text: "Congrats to all 9! See you all in San Antonio — let's bring home some national medals.", timestamp: '2026-06-22T14:30:00' },
+    { id: 'c2_5', authorId: 'user_4',  text: "Qualifying for NLC in Public Speaking was a dream — I literally teared up at State when I found out 😭", timestamp: '2026-06-22T16:00:00' },
+    { id: 'c2_6', authorId: 'user_6',  text: "Representing Colorado on the national stage. So proud of this whole group heading to Texas.", timestamp: '2026-06-23T08:30:00' },
+    { id: 'c2_7', authorId: 'user_8',  text: "Three years ago we barely qualified anyone for nationals. Now 9 members at NLC. Incredible growth.", timestamp: '2026-06-23T10:15:00' },
+    { id: 'c2_8', authorId: 'user_14', text: "This gave me chills. So honored to be part of this chapter. Let's make history in San Antonio!", timestamp: '2026-06-23T13:00:00' },
   ],
 
-  // post_3 — Aisha Thompson (user_8): FBLA Membership Benefits
+  // post_3 — Aisha Thompson (user_8): 2026–2027 Membership Benefits
   post_3: [
-    { id: 'c3_1', authorId: 'user_1',  text: "LinkedIn Learning access is huge! I've already started the product management certification.", timestamp: '2026-03-15T13:00:00Z' },
-    { id: 'c3_2', authorId: 'user_5',  text: "Google Career Certificates are incredibly valuable — especially for anyone planning a tech career. This is a game changer.", timestamp: '2026-03-15T15:30:00Z' },
-    { id: 'c3_3', authorId: 'user_2',  text: "The $2M in scholarships is the headline for me. Renewing my membership today. Don't sleep on this!", timestamp: '2026-03-16T09:00:00Z' },
-    { id: 'c3_4', authorId: 'user_10', text: "Worth every penny of the membership fee. The network alone has opened more doors than anything else I've done.", timestamp: '2026-03-16T11:00:00Z' },
-    { id: 'c3_5', authorId: 'user_14', text: "Does anyone know if the LinkedIn Learning access extends through the summer? Asking for a friend (that friend is me).", timestamp: '2026-03-17T08:30:00Z' },
+    { id: 'c3_2', authorId: 'user_5',  text: "Google Career Certificates are incredibly valuable — especially for anyone planning a tech career. Game changer.", timestamp: '2026-06-10T15:30:00' },
+    { id: 'c3_3', authorId: 'user_2',  text: "The $2M in scholarships is the headline for me. Renewing before September 1 for sure. Don't sleep on this!", timestamp: '2026-06-11T09:00:00' },
+    { id: 'c3_4', authorId: 'user_10', text: "Worth every penny of the membership fee. The network alone has opened more doors than anything else I've done.", timestamp: '2026-06-11T11:00:00' },
+    { id: 'c3_5', authorId: 'user_14', text: "Does the LinkedIn Learning access extend through the summer? Asking for a friend (that friend is me).", timestamp: '2026-06-12T08:30:00' },
   ],
 
-  // post_4 — Maya Singh (user_10): Mobile App Dev Presentation Tips
+  // post_4 — Maya Singh (user_10): Mobile App Dev — What to Expect at NLC Finals
   post_4: [
-    { id: 'c4_1', authorId: 'user_1',  text: "This is gold. Printing this out and taping it above my monitor. Seven minutes really does fly.", timestamp: '2026-03-25T17:30:00Z' },
-    { id: 'c4_2', authorId: 'user_5',  text: "The rubric tip is huge — every point in your demo should map directly to a scoring criterion. Judges notice.", timestamp: '2026-03-25T19:00:00Z' },
-    { id: 'c4_3', authorId: 'user_2',  text: "The physical device advice is critical. A simulator crashing mid-demo could sink your whole presentation.", timestamp: '2026-03-26T08:00:00Z' },
-    { id: 'c4_4', authorId: 'user_6',  text: "'Why React Native?' — writing a full, confident answer to this tonight. Great prompt to prepare for!", timestamp: '2026-03-26T10:30:00Z' },
-    { id: 'c4_5', authorId: 'user_7',  text: "What does a good MVVM explanation look like for a mobile app demo? Do you use slides for that segment?", timestamp: '2026-03-27T09:00:00Z' },
-    { id: 'c4_6', authorId: 'user_15', text: "This is my first competitive event at State. Bookmarking this. Thank you so much for sharing this!", timestamp: '2026-03-27T14:00:00Z' },
+    { id: 'c4_2', authorId: 'user_5',  text: "The rubric tip is huge — at nationals every point in your demo should map to a scoring criterion. Judges notice.", timestamp: '2026-06-28T19:00:00' },
+    { id: 'c4_3', authorId: 'user_2',  text: "The backup demo video advice is critical. A device crashing mid-demo at NLC could sink your whole presentation.", timestamp: '2026-06-28T20:30:00' },
+    { id: 'c4_4', authorId: 'user_6',  text: "Prepping confident answers to the deep architecture questions tonight. Great heads-up on the national-level judges!", timestamp: '2026-06-29T08:00:00' },
+    { id: 'c4_5', authorId: 'user_7',  text: "How technical do the Q&A questions usually get at NLC finals? Want to make sure I'm ready for the 3 minutes.", timestamp: '2026-06-29T09:30:00' },
+    { id: 'c4_6', authorId: 'user_15', text: "My first NLC and first time competing at nationals. Bookmarking this. Thank you so much for sharing!", timestamp: '2026-06-29T11:00:00' },
   ],
 
-  // post_5 — Zoe Harrison (user_12): NLC 2026 Atlanta Hotel
+  // post_5 — Zoe Harrison (user_12): NLC Block Party & Texas Rodeo Night
   post_5: [
-    { id: 'c5_1', authorId: 'user_2',  text: "Adding April 10 to my calendar right now. The FBLA hotel block at NLC always sells out within 48 hours.", timestamp: '2026-03-30T09:30:00Z' },
-    { id: 'c5_2', authorId: 'user_5',  text: "$149/night is honestly incredible for a full-service conference hotel in Atlanta. Book the moment registration opens.", timestamp: '2026-03-30T11:00:00Z' },
-    { id: 'c5_3', authorId: 'user_10', text: "Three-time State qualifier — hotel blocks for NLC are gone in under 24 hours. Set a phone alarm for April 10.", timestamp: '2026-03-30T14:30:00Z' },
-    { id: 'c5_4', authorId: 'user_8',  text: "Hoping to qualify in Business Ethics so I can experience NLC for the first time. Fingers crossed! 🤞", timestamp: '2026-03-31T09:00:00Z' },
+    { id: 'c5_1', authorId: 'user_2',  text: "Block Party tonight?! Live music and 15,000 FBLA members on the plaza — this is going to be unreal.", timestamp: '2026-06-30T08:20:00' },
+    { id: 'c5_2', authorId: 'user_5',  text: "Texas Rodeo Night is always the highlight of NLC. Keep that badge on you — don't get locked out at the door!", timestamp: '2026-06-30T08:35:00' },
+    { id: 'c5_3', authorId: 'user_10', text: "Third NLC and the Block Party never disappoints. Meet by the convention center fountains, everyone!", timestamp: '2026-06-30T08:45:00' },
+    { id: 'c5_4', authorId: 'user_8',  text: "First NLC and I cannot wait for the rodeo. So glad both events are included in registration. 🤠", timestamp: '2026-06-30T08:55:00' },
   ],
 
-  // post_6 — Tyler Williams (user_5): Business Ethics Workshop Recording
+  // post_6 — Tyler Williams (user_5): Leadership Workshops at NLC
   post_6: [
-    { id: 'c6_1', authorId: 'user_8',  text: "Dr. Walsh's ethical decision-making frameworks were incredibly applicable to real business situations. Highly recommend the recording.", timestamp: '2026-03-18T15:00:00Z' },
-    { id: 'c6_2', authorId: 'user_14', text: "Just finished watching — the whistleblower scenario was particularly eye-opening. Great session for anyone in ethics events.", timestamp: '2026-03-19T10:00:00Z' },
-    { id: 'c6_3', authorId: 'user_4',  text: "How long is the full recording? Want to make sure I can fit it in before the State crunch.", timestamp: '2026-03-20T09:30:00Z' },
+    { id: 'c6_1', authorId: 'user_8',  text: "Signed up for the 'AI in Business' workshop already — exactly the kind of session that's worth attending at NLC.", timestamp: '2026-06-24T15:00:00' },
+    { id: 'c6_2', authorId: 'user_14', text: "The Career Networking workshop is perfect for members not competing. Seats really do fill fast — register early!", timestamp: '2026-06-24T18:00:00' },
+    { id: 'c6_3', authorId: 'user_4',  text: "Are the Public Speaking Mastery sessions beginner-friendly? Want to attend between my competition events.", timestamp: '2026-06-25T09:30:00' },
   ],
 
-  // post_7 — Tyler Williams (user_5): Community Service Award
+  // post_7 — Tyler Williams (user_5): Colorado FBLA Community Service Award
   post_7: [
-    { id: 'c7_1', authorId: 'user_1',  text: "So proud of everyone who gave up their Saturday mornings for this. This is exactly what FBLA is about. 🎉", timestamp: '2026-03-10T16:30:00Z' },
-    { id: 'c7_2', authorId: 'user_8',  text: "We impacted 87 seniors' lives. That's not a statistic — those are real people we helped become more connected.", timestamp: '2026-03-11T09:00:00Z' },
-    { id: 'c7_3', authorId: 'user_12', text: "Congratulations District 12! This is what FBLA is really about. Community first, competition second.", timestamp: '2026-03-11T12:00:00Z' },
-    { id: 'c7_4', authorId: 'user_14', text: "I remember the first Saturday with only 6 volunteers. Now 400 hours. Look how far we've come!", timestamp: '2026-03-12T08:00:00Z' },
-    { id: 'c7_5', authorId: 'user_4',  text: "This is why I joined FBLA — making a real difference in the community. So proud to be part of this chapter!", timestamp: '2026-03-12T11:30:00Z' },
+    { id: 'c7_2', authorId: 'user_8',  text: "We impacted 87 seniors' lives. That's not a statistic — those are real people we helped become more connected.", timestamp: '2026-03-11T09:00:00' },
+    { id: 'c7_3', authorId: 'user_12', text: "Congratulations District 12! This is what FBLA is really about. Community first, competition second.", timestamp: '2026-03-11T12:00:00' },
+    { id: 'c7_4', authorId: 'user_14', text: "I remember the first Saturday with only 6 volunteers. Now 400 hours. Look how far we've come!", timestamp: '2026-03-12T08:00:00' },
+    { id: 'c7_5', authorId: 'user_4',  text: "This is why I joined FBLA — making a real difference in the community. So proud to be part of this chapter!", timestamp: '2026-03-12T11:30:00' },
   ],
 
-  // post_8 — Amara Okafor (user_14): FBLA Week 2026
+  // post_8 — Amara Okafor (user_14): 2026–2027 Colorado State Officers Elected
   post_8: [
-    { id: 'c8_1', authorId: 'user_1',  text: "FBLA Blue & Gold Day on Monday — already planning my outfit. Let's show some school spirit! 💙💛", timestamp: '2026-03-22T11:00:00Z' },
-    { id: 'c8_2', authorId: 'user_5',  text: "The resume workshop with actual HR professionals is a must-attend. Better prep than anything you'll find online.", timestamp: '2026-03-22T14:00:00Z' },
-    { id: 'c8_3', authorId: 'user_2',  text: "Elitch Gardens for the chapter social?! That's amazing. Chapter leadership really came through this year! 🎉", timestamp: '2026-03-23T09:00:00Z' },
-    { id: 'c8_4', authorId: 'user_11', text: "Social media coverage for the whole week is going to be incredible. Can't wait to see the content!", timestamp: '2026-03-23T12:30:00Z' },
+    { id: 'c8_2', authorId: 'user_5',  text: "Congrats to the new state officer team! Excited to see the vision they bring for growing Colorado FBLA next year.", timestamp: '2026-06-18T14:00:00' },
+    { id: 'c8_3', authorId: 'user_2',  text: "Getting installed at the NLC closing ceremony in San Antonio is such a special way to start their term! 🎉", timestamp: '2026-06-19T09:00:00' },
+    { id: 'c8_4', authorId: 'user_11', text: "Just checked the full officer list on the Colorado FBLA site. Strong team — congratulations to all of them!", timestamp: '2026-06-19T12:30:00' },
   ],
 
-  // post_9 — Aisha Thompson (user_8): Interview Skills Webinar Recap
+  // post_9 — Aisha Thompson (user_8): San Antonio Travel Tips
   post_9: [
-    { id: 'c9_1', authorId: 'user_9',  text: "The STAR method tip was the most useful takeaway. I realize I've been answering behavioral questions completely wrong.", timestamp: '2026-03-14T16:00:00Z' },
-    { id: 'c9_2', authorId: 'user_14', text: "Maya's advice on maintaining 75% eye contact is spot on — practiced in the mirror for an hour after watching.", timestamp: '2026-03-15T09:00:00Z' },
+    { id: 'c9_1', authorId: 'user_9',  text: "The River Walk tip is clutch — had dinner there last night after competition. Short walk from the convention center.", timestamp: '2026-06-28T16:00:00' },
+    { id: 'c9_2', authorId: 'user_14', text: "Comfortable shoes is real advice — my step count was 6 miles yesterday. And the VIA shuttle saved us so much time!", timestamp: '2026-06-29T09:00:00' },
   ],
 
-  // post_10 — Tyler Williams (user_5): State Officer Candidate Applications
+  // post_10 — Tyler Williams (user_5): National Officer Candidate Voting Opens Tomorrow
   post_10: [
-    { id: 'c10_1', authorId: 'user_2',  text: "Already drafting my application for chapter reporter! Such an amazing opportunity to grow as a leader.", timestamp: '2026-03-05T11:00:00Z' },
-    { id: 'c10_2', authorId: 'user_14', text: "The 2-minute intro video requirement is actually great practice for elevator pitches and interviews.", timestamp: '2026-03-06T09:00:00Z' },
-    { id: 'c10_3', authorId: 'user_12', text: "Excited to see who the next class of state officers will be. Rooting for all applicants from our chapter!", timestamp: '2026-03-07T10:30:00Z' },
-    { id: 'c10_4', authorId: 'user_4',  text: "Is the application open to 10th graders? I want to apply but want to confirm I'm eligible first.", timestamp: '2026-03-08T14:00:00Z' },
+    { id: 'c10_1', authorId: 'user_2',  text: "Reviewing all 12 candidate platforms in the NLC app tonight so I'm ready to vote at the General Session. 🗳️", timestamp: '2026-06-30T09:20:00' },
+    { id: 'c10_2', authorId: 'user_14', text: "The candidate speeches this morning were incredible. Going to be a tough choice for those 6 positions!", timestamp: '2026-06-30T09:35:00' },
+    { id: 'c10_3', authorId: 'user_12', text: "Every NLC delegate should make sure they vote — this is how we shape national FBLA leadership. Don't skip it!", timestamp: '2026-06-30T09:50:00' },
+    { id: 'c10_4', authorId: 'user_4',  text: "Is voting only at the 10 AM General Session, or is there a window in the app afterward? Want to make sure I don't miss it.", timestamp: '2026-06-30T10:05:00' },
   ],
 
-  // post_11 — Maya Singh (user_10): How to Prepare Your App Demo in 7 Minutes
+  // post_11 — Maya Singh (user_10): How to Nail Your 7-Minute NLC Presentation
   post_11: [
-    { id: 'c11_1', authorId: 'user_1',  text: "The time breakdown is so helpful. Practicing my full demo with a stopwatch tonight using exactly this structure.", timestamp: '2026-03-26T21:00:00Z' },
-    { id: 'c11_2', authorId: 'user_5',  text: "The dedicated architecture segment is key. Judges really do weight the technical explanation heavily in the rubric.", timestamp: '2026-03-27T08:30:00Z' },
-    { id: 'c11_3', authorId: 'user_6',  text: "0:45–1:30 for the problem statement is genius. Gets judges emotionally invested before the demo even starts.", timestamp: '2026-03-27T10:00:00Z' },
-    { id: 'c11_4', authorId: 'user_15', text: "How do you handle it if a judge asks a question mid-demo? Do you pause the timer or keep going?", timestamp: '2026-03-28T09:00:00Z' },
-    { id: 'c11_5', authorId: 'user_2',  text: "This structure works perfectly for Website Design too with slight modifications. Saving this permanently!", timestamp: '2026-03-28T12:00:00Z' },
+    { id: 'c11_2', authorId: 'user_5',  text: "The dedicated architecture segment is key. National judges really do weight the technical explanation heavily.", timestamp: '2026-06-25T22:00:00' },
+    { id: 'c11_3', authorId: 'user_6',  text: "0:45–1:30 for the problem statement is genius. Gets judges emotionally invested before the demo even starts.", timestamp: '2026-06-26T09:00:00' },
+    { id: 'c11_4', authorId: 'user_15', text: "How do you handle it if a judge asks a question during the 7 minutes? Do you pause or keep going?", timestamp: '2026-06-26T11:30:00' },
+    { id: 'c11_5', authorId: 'user_2',  text: "This structure works perfectly for Website Design too with slight tweaks. Saving this before my NLC presentation!", timestamp: '2026-06-26T14:00:00' },
   ],
 
-  // post_12 — Zoe Harrison (user_12): Colorado FBLA Mentorship Partnership
+  // post_12 — Zoe Harrison (user_12): Colorado FBLA × Denver Metro Chamber Mentorship
   post_12: [
-    { id: 'c12_1', authorId: 'user_2',  text: "Applied already! A Lockheed Martin mentor would be incredible for my engineering career plans.", timestamp: '2026-03-12T13:00:00Z' },
-    { id: 'c12_2', authorId: 'user_10', text: "DaVita and Centura Health connections are perfect for members considering healthcare careers too.", timestamp: '2026-03-13T09:00:00Z' },
-    { id: 'c12_3', authorId: 'user_5',  text: "Charles Schwab mentors for anyone in finance — this mentor list is seriously impressive.", timestamp: '2026-03-13T11:30:00Z' },
-    { id: 'c12_4', authorId: 'user_8',  text: "This is the most concrete professional development benefit I've ever seen from FBLA. Signing up immediately.", timestamp: '2026-03-14T09:00:00Z' },
+    { id: 'c12_1', authorId: 'user_2',  text: "Applied already! A Lockheed Martin mentor would be incredible for my engineering career plans.", timestamp: '2026-03-12T13:00:00' },
+    { id: 'c12_2', authorId: 'user_10', text: "DaVita and Centura Health connections are perfect for members considering healthcare careers too.", timestamp: '2026-03-13T09:00:00' },
+    { id: 'c12_3', authorId: 'user_5',  text: "Charles Schwab mentors for anyone in finance — this mentor list is seriously impressive.", timestamp: '2026-03-13T11:30:00' },
+    { id: 'c12_4', authorId: 'user_8',  text: "This is the most concrete professional development benefit I've ever seen from FBLA. Signing up immediately.", timestamp: '2026-03-14T09:00:00' },
   ],
 
-  // post_13 — Tyler Williams (user_5): New Resources — Website Design Study Guides
+  // post_13 — Tyler Williams (user_5): 2027 NLC Announced — Columbus, Ohio
   post_13: [
-    { id: 'c13_1', authorId: 'user_2',  text: "The HTML5/CSS3 guide is genuinely comprehensive. Found two accessibility considerations I hadn't thought of.", timestamp: '2026-03-08T15:00:00Z' },
-    { id: 'c13_2', authorId: 'user_7',  text: "The UX journey mapping guide is exactly what I needed! Huge thanks to whoever last year's finalists were.", timestamp: '2026-03-09T09:30:00Z' },
-    { id: 'c13_3', authorId: 'user_4',  text: "The SEO checklist is so useful — hadn't thought about meta descriptions and alt text for a competition site.", timestamp: '2026-03-09T11:00:00Z' },
-    { id: 'c13_4', authorId: 'user_6',  text: "These are genuinely high quality resources. Whoever contributed them really paid it forward to next year's competitors.", timestamp: '2026-03-10T08:30:00Z' },
-    { id: 'c13_5', authorId: 'user_9',  text: "The 7-minute presentation script template is going to save me hours of planning. Exactly what I needed.", timestamp: '2026-03-10T14:00:00Z' },
+    { id: 'c13_1', authorId: 'user_2',  text: "Back-to-back nationals — let's make Columbus 2027 happen! Starting my portfolio for next year right now.", timestamp: '2026-06-29T15:00:00' },
+    { id: 'c13_2', authorId: 'user_7',  text: "As a sophomore this is exactly the motivation I needed. Columbus 2027 is officially my target. 🚀", timestamp: '2026-06-29T17:30:00' },
+    { id: 'c13_3', authorId: 'user_4',  text: "Registration opening in January 2027 gives us plenty of runway. Time to lock in our competitive events early.", timestamp: '2026-06-29T19:00:00' },
+    { id: 'c13_4', authorId: 'user_6',  text: "Ohio is so much closer for travel than Texas was. Already excited for next year's national appearance!", timestamp: '2026-06-30T08:30:00' },
+    { id: 'c13_5', authorId: 'user_9',  text: "Just grabbed the next-year resources from the Resources tab. Never too early to start prepping for Columbus.", timestamp: '2026-06-30T09:15:00' },
   ],
 
-  // post_14 — Tyler Williams (user_5): Member Spotlight — Vedaant Pareek
+  // post_14 — Tyler Williams (user_5): Member Spotlight — Vedaant Pareek Advances to NLC
   post_14: [
-    { id: 'c14_1', authorId: 'user_2',  text: "Vedaant, this is so well deserved! I've seen how hard you've worked on ConnectFBLA. Go crush it at State! 🚀", timestamp: '2026-03-02T17:00:00Z' },
-    { id: 'c14_2', authorId: 'user_10', text: "One Mobile App Dev competitor to another — your app concept is brilliant. Can't wait to connect at State! 🏆", timestamp: '2026-03-02T18:30:00Z' },
-    { id: 'c14_3', authorId: 'user_12', text: "District Champion is a huge achievement. Cherry Creek is so lucky to have you representing us!", timestamp: '2026-03-03T09:00:00Z' },
-    { id: 'c14_4', authorId: 'user_4',  text: "I tried ConnectFBLA and it's genuinely incredible. The real-time chat feature feels like a real professional product.", timestamp: '2026-03-03T14:00:00Z' },
-    { id: 'c14_5', authorId: 'user_8',  text: "From everyone in District 12 — we are all cheering you on, Vedaant! Bring home that gold. 🏆💙", timestamp: '2026-03-04T09:30:00Z' },
-    { id: 'c14_6', authorId: 'user_14', text: "First place in the district AND a full-featured FBLA app? You're an inspiration to every member in Colorado.", timestamp: '2026-03-04T12:00:00Z' },
+    { id: 'c14_1', authorId: 'user_2',  text: "Vedaant, this is so well deserved! I've seen how hard you've worked on ConnectFBLA. Go crush it at NLC! 🚀", timestamp: '2026-06-21T17:00:00' },
+    { id: 'c14_2', authorId: 'user_10', text: "One Mobile App Dev competitor to another — your app concept is brilliant. Can't wait to connect in San Antonio! 🏆", timestamp: '2026-06-21T18:30:00' },
+    { id: 'c14_3', authorId: 'user_12', text: "1st at State and a spot at nationals is a huge achievement. Cherry Creek is so lucky to have you representing us!", timestamp: '2026-06-22T09:00:00' },
+    { id: 'c14_4', authorId: 'user_4',  text: "I tried ConnectFBLA and it's genuinely incredible. The real-time chat feature feels like a real professional product.", timestamp: '2026-06-22T11:00:00' },
+    { id: 'c14_5', authorId: 'user_8',  text: "From everyone in District 12 — we are all cheering you on at NLC, Vedaant! Bring home that national medal. 🏆💙", timestamp: '2026-06-22T13:30:00' },
+    { id: 'c14_6', authorId: 'user_14', text: "1st at State AND a full-featured FBLA app? You're an inspiration to every member in Colorado. Go get it at NLC!", timestamp: '2026-06-22T15:00:00' },
   ],
 
-  // post_15 — Zoe Harrison (user_12): NLC Registration Reminder
+  // post_15 — Zoe Harrison (user_12): NLC Opening Ceremony Recap
   post_15: [
-    { id: 'c15_1', authorId: 'user_5',  text: "April 22 comes faster than you think. Talking to my advisor TODAY. Thanks for the reminder — this is critical.", timestamp: '2026-04-01T09:00:00Z' },
-    { id: 'c15_2', authorId: 'user_2',  text: "Printing this out for my advisor right now. Hard deadlines with no exceptions — this is as serious as it gets.", timestamp: '2026-04-01T10:30:00Z' },
+    { id: 'c15_1', authorId: 'user_5',  text: "What a night! 15,000 members and all 50 state flags — the energy in that arena was unreal. Let's make Colorado proud.", timestamp: '2026-06-29T22:45:00' },
+    { id: 'c15_2', authorId: 'user_2',  text: "Jasmine Carter's keynote gave me chills. 'Lead now, don't wait for permission' — writing that on my mirror. 🔥", timestamp: '2026-06-30T08:00:00' },
   ],
 };
 
