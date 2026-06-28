@@ -88,7 +88,7 @@ function StatPill({ iconName, count, color }) {
 // Comment row sub-component
 // ---------------------------------------------------------------------------
 
-function CommentRow({ comment }) {
+function CommentRow({ comment, onPressAuthor }) {
   const authorId = comment.authorId;
   const name = getAuthorName(authorId);
   const initial = getAuthorInitial(authorId);
@@ -97,12 +97,26 @@ function CommentRow({ comment }) {
 
   return (
     <View style={styles.commentRow}>
-      <View style={[styles.commentAvatar, { backgroundColor: bg }]}>
-        <Text style={styles.commentAvatarInitial}>{initial}</Text>
-      </View>
+      <TouchableOpacity
+        onPress={onPressAuthor}
+        activeOpacity={0.7}
+        accessibilityRole="button"
+        accessibilityLabel={`View ${name}'s profile`}
+      >
+        <View style={[styles.commentAvatar, { backgroundColor: bg }]}>
+          <Text style={styles.commentAvatarInitial}>{initial}</Text>
+        </View>
+      </TouchableOpacity>
       <View style={styles.commentBody}>
         <View style={styles.commentHeaderRow}>
-          <Text style={styles.commentAuthor}>{name}</Text>
+          <TouchableOpacity
+            onPress={onPressAuthor}
+            hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+            accessibilityRole="button"
+            accessibilityLabel={`View ${name}'s profile`}
+          >
+            <Text style={styles.commentAuthor}>{name}</Text>
+          </TouchableOpacity>
           <Text style={styles.commentTime}>{timeAgo}</Text>
         </View>
         <Text style={styles.commentText}>{comment.text}</Text>
@@ -318,8 +332,14 @@ export default function AnnouncementDetailScreen({ route, navigation }) {
         {/* Title */}
         <Text style={styles.title}>{post.title}</Text>
 
-        {/* Author + date row */}
-        <View style={styles.metaRow}>
+        {/* Author + date row — tap to view the author's profile */}
+        <TouchableOpacity
+          style={styles.metaRow}
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate(SCREENS.USER_PROFILE, { userId: post.authorId })}
+          accessibilityRole="button"
+          accessibilityLabel={`View ${authorName}'s profile`}
+        >
           <View style={[styles.authorAvatar, { backgroundColor: avatarColor(post.authorId) }]}>
             <Text style={styles.authorInitial}>{authorName.charAt(0).toUpperCase()}</Text>
           </View>
@@ -331,7 +351,8 @@ export default function AnnouncementDetailScreen({ route, navigation }) {
               {formatTimeAgo(post.timestamp)}
             </Text>
           </View>
-        </View>
+          <Ionicons name="chevron-forward" size={18} color={COLORS.placeholderText} />
+        </TouchableOpacity>
 
         <View style={styles.divider} />
 
@@ -409,7 +430,13 @@ export default function AnnouncementDetailScreen({ route, navigation }) {
             </View>
           ) : (
             comments.map((comment) => (
-              <CommentRow key={comment.id} comment={comment} />
+              <CommentRow
+                key={comment.id}
+                comment={comment}
+                onPressAuthor={() =>
+                  navigation.navigate(SCREENS.USER_PROFILE, { userId: comment.authorId })
+                }
+              />
             ))
           )}
         </View>

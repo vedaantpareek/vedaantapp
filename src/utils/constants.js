@@ -127,4 +127,6 @@ export const SCREENS = {
   PROFILE: 'ProfileMain',
   EDIT_PROFILE: 'EditProfile',
   SETTINGS: 'Settings',
+  // Shared — public profile of another member (reachable from Feed & Connect)
+  USER_PROFILE: 'UserProfile',
 };

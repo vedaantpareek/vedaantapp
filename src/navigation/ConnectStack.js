@@ -12,6 +12,7 @@ export default function ConnectStack() {
   const GroupChannelScreen = require('../screens/Connect/GroupChannelScreen').default;
   const DirectMessageScreen = require('../screens/Connect/DirectMessageScreen').default;
   const NewMessageScreen = require('../screens/Connect/NewMessageScreen').default;
+  const UserProfileScreen = require('../screens/Profile/UserProfileScreen').default;
 
   return (
     <Stack.Navigator
@@ -79,7 +80,16 @@ export default function ConnectStack() {
         component={DirectMessageScreen}
         options={({ navigation, route }) => ({
           headerTitle: () => (
-            <View style={{ alignItems: 'center' }}>
+            <TouchableOpacity
+              style={{ alignItems: 'center' }}
+              activeOpacity={0.7}
+              onPress={() =>
+                route.params?.otherUserId &&
+                navigation.navigate(SCREENS.USER_PROFILE, { userId: route.params.otherUserId })
+              }
+              accessibilityRole="button"
+              accessibilityLabel={`View ${route.params?.otherUserName || 'member'}'s profile`}
+            >
               <Text style={{ color: COLORS.white, fontWeight: '700', fontSize: 17 }}>
                 {route.params?.otherUserName || 'Message'}
               </Text>
@@ -94,7 +104,7 @@ export default function ConnectStack() {
                   {route.params?.otherUserOnline ? 'Active now' : 'Offline'}
                 </Text>
               </View>
-            </View>
+            </TouchableOpacity>
           ),
           headerRight: () => (
             <TouchableOpacity
@@ -113,6 +123,11 @@ export default function ConnectStack() {
         name={SCREENS.NEW_MESSAGE}
         component={NewMessageScreen}
         options={{ title: 'New Message' }}
+      />
+      <Stack.Screen
+        name={SCREENS.USER_PROFILE}
+        component={UserProfileScreen}
+        options={{ title: 'Profile', headerTitleAlign: 'center' }}
       />
     </Stack.Navigator>
   );

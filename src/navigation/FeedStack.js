@@ -8,6 +8,7 @@ const Stack = createNativeStackNavigator();
 export default function FeedStack() {
   const NewsFeedScreen = require('../screens/Feed/NewsFeedScreen').default;
   const AnnouncementDetailScreen = require('../screens/Feed/AnnouncementDetailScreen').default;
+  const UserProfileScreen = require('../screens/Profile/UserProfileScreen').default;
 
   return (
     <Stack.Navigator
@@ -31,6 +32,11 @@ export default function FeedStack() {
         name={SCREENS.ANNOUNCEMENT_DETAIL}
         component={AnnouncementDetailScreen}
         options={{ title: 'Announcement' }}
+      />
+      <Stack.Screen
+        name={SCREENS.USER_PROFILE}
+        component={UserProfileScreen}
+        options={{ title: 'Profile' }}
       />
     </Stack.Navigator>
   );

@@ -18,9 +18,11 @@ export default function MessageBubble({
   message,
   isOutgoing,
   showAuthor,
+  onAuthorPress,
   style,
 }) {
   const {
+    authorId,
     text,
     authorName,
     authorImageUri,
@@ -31,24 +33,44 @@ export default function MessageBubble({
     readStatus,
   } = message;
 
+  const handleAuthorPress =
+    onAuthorPress && !isOutgoing ? () => onAuthorPress(authorId) : null;
+
   const [lightboxVisible, setLightboxVisible] = useState(false);
 
   return (
     <View style={[styles.row, isOutgoing ? styles.rowOutgoing : styles.rowIncoming, style]}>
       {/* Avatar for incoming messages */}
       {!isOutgoing && (
-        <AppAvatar
-          name={authorName}
-          imageUri={authorImageUri}
-          size="sm"
-          style={styles.avatar}
-        />
+        handleAuthorPress ? (
+          <TouchableOpacity
+            onPress={handleAuthorPress}
+            activeOpacity={0.7}
+            accessibilityRole="button"
+            accessibilityLabel={`View ${authorName}'s profile`}
+          >
+            <AppAvatar name={authorName} imageUri={authorImageUri} size="sm" style={styles.avatar} />
+          </TouchableOpacity>
+        ) : (
+          <AppAvatar name={authorName} imageUri={authorImageUri} size="sm" style={styles.avatar} />
+        )
       )}
 
       <View style={styles.bubbleColumn}>
         {/* Author name for incoming group messages */}
         {!isOutgoing && showAuthor && authorName ? (
-          <Text style={styles.authorName}>{authorName}</Text>
+          handleAuthorPress ? (
+            <TouchableOpacity
+              onPress={handleAuthorPress}
+              hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
+              accessibilityRole="button"
+              accessibilityLabel={`View ${authorName}'s profile`}
+            >
+              <Text style={styles.authorName}>{authorName}</Text>
+            </TouchableOpacity>
+          ) : (
+            <Text style={styles.authorName}>{authorName}</Text>
+          )
         ) : null}
 
         {/* Main bubble */}
@@ -179,6 +201,7 @@ MessageBubble.propTypes = {
   }).isRequired,
   isOutgoing: PropTypes.bool,
   showAuthor: PropTypes.bool,
+  onAuthorPress: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 

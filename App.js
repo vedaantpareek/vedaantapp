@@ -5,14 +5,17 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from './src/navigation/RootNavigator';
 import { useAuthStore } from './src/stores/authStore';
+import { useFriendsStore } from './src/stores/friendsStore';
 import { navigationRef } from './src/navigation/navigationRef';
 import RemoteControlListener from './src/components/RemoteControlListener';
 
 export default function App() {
   const initializeAuth = useAuthStore((state) => state.initialize);
+  const initializeFriends = useFriendsStore((state) => state.initialize);
 
   useEffect(() => {
     initializeAuth();
+    initializeFriends();
   }, []);
 
   return (

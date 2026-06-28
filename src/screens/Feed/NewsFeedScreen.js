@@ -102,7 +102,7 @@ const SOCIAL_PLATFORMS = [
 // PostCard sub-component
 // ---------------------------------------------------------------------------
 
-function PostCard({ post, liked, commentCount, onPress, onLike }) {
+function PostCard({ post, liked, commentCount, onPress, onLike, onAuthorPress }) {
   const authorName = USERS.find((u) => u.id === post.authorId)?.name || 'FBLA Member';
   const timeAgo = formatTimeAgo(post.timestamp);
   const badgeColor = CATEGORY_COLORS[post.category] || COLORS.primary;
@@ -137,11 +137,20 @@ function PostCard({ post, liked, commentCount, onPress, onLike }) {
       <Text style={styles.cardBody} numberOfLines={2}>{post.body}</Text>
 
       <View style={styles.cardFooter}>
-        <Text style={styles.cardMeta} numberOfLines={1}>
-          {authorName}
-          <Text style={styles.cardMetaDot}> · </Text>
-          {timeAgo}
-        </Text>
+        <View style={styles.cardMetaWrap}>
+          <TouchableOpacity
+            onPress={onAuthorPress}
+            hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+            accessibilityRole="button"
+            accessibilityLabel={`View ${authorName}'s profile`}
+          >
+            <Text style={styles.cardAuthorLink} numberOfLines={1}>{authorName}</Text>
+          </TouchableOpacity>
+          <Text style={styles.cardMeta} numberOfLines={1}>
+            <Text style={styles.cardMetaDot}> · </Text>
+            {timeAgo}
+          </Text>
+        </View>
 
         <View style={styles.cardActions}>
           <TouchableOpacity
@@ -343,9 +352,10 @@ export default function NewsFeedScreen({ navigation }) {
         commentCount={commentCounts[item.id] ?? item.commentCount}
         onPress={() => handleCardPress(item)}
         onLike={() => handleLike(item.id)}
+        onAuthorPress={() => navigation.navigate(SCREENS.USER_PROFILE, { userId: item.authorId })}
       />
     ),
-    [likedPosts, handleCardPress, handleLike],
+    [likedPosts, handleCardPress, handleLike, navigation],
   );
 
   const keyExtractor = useCallback((item) => item.id, []);
@@ -583,11 +593,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  cardMetaWrap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    marginRight: SPACING.sm,
+  },
   cardMeta: {
     fontSize: 12,
     color: COLORS.secondaryText,
-    flex: 1,
-    marginRight: SPACING.sm,
+    flexShrink: 0,
+  },
+  cardAuthorLink: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: COLORS.primary,
+    flexShrink: 1,
   },
   cardMetaDot: {
     color: COLORS.placeholderText,

@@ -252,6 +252,9 @@ export default function GroupChannelScreen({ route, navigation }) {
                 message={item}
                 isOutgoing={isOutgoing}
                 showAuthor={showAuthor}
+                onAuthorPress={(authorId) =>
+                  navigation.navigate(SCREENS.USER_PROFILE, { userId: authorId })
+                }
               />
             </Pressable>
           );
